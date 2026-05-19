@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GRTA.AI — Assemble the right team</title>
+  <meta name="description" content="GRTA assembles expert teams across your organisation in hours, not weeks. Request early access.">
+  <meta property="og:title" content="GRTA.AI — Assemble the right team">
+  <meta property="og:description" content="GRTA assembles expert teams across your organisation in hours, not weeks. Request early access.">
+  <meta property="og:type" content="website">
+
+  <!-- Inline SVG Favicon: orange square, white G -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='5' fill='%23E8450A'/%3E%3Ctext x='16' y='22.5' font-family='Inter%2C sans-serif' font-size='19' font-weight='600' fill='%23FFFFFF' text-anchor='middle'%3EG%3C/text%3E%3C/svg%3E">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* ── Reset & Variables ─────────────────────────────────── */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --bg:           #0D1B2A;
+      --bg-mid:       #111F2E;
+      --accent:       #E8450A;
+      --accent-hover: #FF5722;
+      --text-1:       #FFFFFF;
+      --text-2:       #AAAAAA;
+      --border:       rgba(255, 255, 255, 0.09);
+      --max-w:        1100px;
+      --nav-h:        68px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text-1);
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Utility ───────────────────────────────────────────── */
+    .wrap {
+      max-width: var(--max-w);
+      margin-inline: auto;
+      padding-inline: clamp(1.25rem, 4vw, 2.5rem);
+    }
+
+    .center { text-align: center; }
+
+    .label {
+      display: block;
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.75rem;
+    }
+
+    /* ── Navigation ────────────────────────────────────────── */
+    .site-nav {
+      position: fixed;
+      inset-block-start: 0;
+      inset-inline: 0;
+      z-index: 200;
+      height: var(--nav-h);
+      display: flex;
+      align-items: center;
+      background: rgba(13, 27, 42, 0.82);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      transition: background 0.3s ease;
+    }
+
+    .site-nav .wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    .logo {
+      font-size: 1.4rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      color: var(--text-1);
+      text-decoration: none;
+      line-height: 1;
+    }
+
+    .logo em {
+      color: var(--accent);
+      font-style: normal;
+    }
+
+    .btn-nav {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.825rem;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+      padding: 0.5rem 1.25rem;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .btn-nav:hover {
+      background: var(--accent-hover);
+      transform: translateY(-1px);
+    }
+
+    /* ── Hero ──────────────────────────────────────────────── */
+    #hero {
+      position: relative;
+      height: 100dvh;
+      min-height: 620px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    #particle-canvas {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding-inline: clamp(1.25rem, 5vw, 3rem);
+      max-width: 820px;
+    }
+
+    .hero-headline {
+      font-size: clamp(2.1rem, 5.5vw, 4rem);
+      font-weight: 600;
+      line-height: 1.12;
+      letter-spacing: -0.03em;
+      margin-bottom: 1.5rem;
+      /* subtle text shadow so headline always reads over canvas */
+      text-shadow: 0 2px 32px rgba(13, 27, 42, 0.7);
+    }
+
+    .hero-sub {
+      font-size: clamp(1rem, 1.9vw, 1.2rem);
+      font-weight: 300;
+      color: var(--text-2);
+      max-width: 540px;
+      margin-inline: auto;
+      margin-bottom: 2.75rem;
+      line-height: 1.75;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--accent);
+      color: #fff;
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+      padding: 0.9rem 2.25rem;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 28px rgba(232, 69, 10, 0.38);
+    }
+
+    .btn-primary svg { flex-shrink: 0; }
+
+    .scroll-hint {
+      position: absolute;
+      bottom: 2.25rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.45rem;
+      pointer-events: none;
+    }
+
+    .scroll-hint span {
+      font-size: 0.65rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-2);
+      opacity: 0.55;
+    }
+
+    .scroll-hint__line {
+      width: 1px;
+      height: 38px;
+      background: linear-gradient(to bottom, transparent, rgba(170,170,170,0.5));
+      animation: lineDown 1.6s ease-in-out infinite;
+    }
+
+    @keyframes lineDown {
+      0%, 100% { opacity: 0.25; transform: scaleY(0.6) translateY(-4px); }
+      50%       { opacity: 0.9;  transform: scaleY(1)   translateY(4px); }
+    }
+
+    /* ── Section baseline ──────────────────────────────────── */
+    .section {
+      padding-block: clamp(5rem, 10vw, 8rem);
+      scroll-margin-top: var(--nav-h);
+    }
+
+    /* ── Problem ───────────────────────────────────────────── */
+    #problem { background: var(--bg); }
+
+    .problem-heading {
+      font-size: clamp(1.7rem, 3.5vw, 2.6rem);
+      font-weight: 500;
+      letter-spacing: -0.025em;
+      line-height: 1.2;
+      margin-bottom: 3.5rem;
+      max-width: 660px;
+      margin-inline: auto;
+    }
+
+    .beats {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-bottom: 4rem;
+      max-width: 640px;
+      margin-inline: auto;
+      text-align: left;
+    }
+
+    .beats li {
+      font-size: clamp(0.95rem, 1.7vw, 1.125rem);
+      font-weight: 300;
+      color: var(--text-2);
+      padding: 1.25rem 1.75rem;
+      border-left: 2px solid var(--accent);
+      background: rgba(232, 69, 10, 0.04);
+      transition: background 0.25s;
+    }
+
+    .beats li:hover {
+      background: rgba(232, 69, 10, 0.08);
+    }
+
+    .problem-close {
+      font-size: clamp(1.4rem, 3vw, 2.1rem);
+      font-weight: 600;
+      letter-spacing: -0.025em;
+      color: var(--accent);
+    }
+
+    /* ── Solution ──────────────────────────────────────────── */
+    #solution { background: var(--bg-mid); }
+
+    .solution-intro {
+      font-size: clamp(1rem, 1.75vw, 1.15rem);
+      font-weight: 300;
+      color: var(--text-2);
+      max-width: 640px;
+      margin-inline: auto;
+      margin-bottom: 4.5rem;
+      line-height: 1.85;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-bottom: 4.5rem;
+    }
+
+    .step {
+      padding: 2.5rem 2rem;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.02);
+      text-align: left;
+      transition: border-color 0.3s, background 0.3s;
+    }
+
+    .step:hover {
+      border-color: rgba(232, 69, 10, 0.35);
+      background: rgba(232, 69, 10, 0.03);
+    }
+
+    .step-num {
+      font-size: 2.75rem;
+      font-weight: 600;
+      letter-spacing: -0.04em;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 1.5rem;
+      opacity: 0.85;
+    }
+
+    .step-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      margin-bottom: 0.75rem;
+    }
+
+    .step-desc {
+      font-size: 0.925rem;
+      font-weight: 300;
+      color: var(--text-2);
+      line-height: 1.75;
+    }
+
+    .solution-close {
+      font-size: clamp(1.2rem, 2.5vw, 1.7rem);
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+
+    /* ── Proof ─────────────────────────────────────────────── */
+    #proof { background: var(--bg); }
+
+    .proof-lead {
+      font-size: 1rem;
+      font-weight: 300;
+      color: var(--text-2);
+      margin-bottom: 1.75rem;
+    }
+
+    .proof-orgs {
+      font-size: clamp(1.5rem, 3.5vw, 2.6rem);
+      font-weight: 500;
+      letter-spacing: -0.025em;
+      line-height: 1.25;
+      margin-bottom: 1.5rem;
+    }
+
+    .proof-dot {
+      color: var(--accent);
+      margin-inline: 0.75rem;
+    }
+
+    .proof-footer {
+      font-size: 0.875rem;
+      font-weight: 300;
+      color: var(--text-2);
+    }
+
+    /* ── Access (Lead capture) ─────────────────────────────── */
+    #access { background: var(--bg-mid); }
+
+    .access-heading {
+      font-size: clamp(2rem, 4.5vw, 3.25rem);
+      font-weight: 600;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      margin-bottom: 1.25rem;
+    }
+
+    .access-desc {
+      font-size: 1rem;
+      font-weight: 300;
+      color: var(--text-2);
+      max-width: 480px;
+      margin-inline: auto;
+      margin-bottom: 3rem;
+      line-height: 1.75;
+    }
+
+    .form-wrap {
+      max-width: 460px;
+      margin-inline: auto;
+      text-align: left;
+    }
+
+    .field { margin-bottom: 0.875rem; }
+
+    .field label {
+      display: block;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-2);
+      margin-bottom: 0.45rem;
+    }
+
+    .input {
+      width: 100%;
+      background: rgba(255,255,255,0.035);
+      border: 1px solid rgba(255,255,255,0.11);
+      color: var(--text-1);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.925rem;
+      font-weight: 400;
+      padding: 0.825rem 1rem;
+      outline: none;
+      appearance: none;
+      -webkit-appearance: none;
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    .input::placeholder { color: rgba(255,255,255,0.22); }
+
+    .input:focus {
+      border-color: var(--accent);
+      background: rgba(232, 69, 10, 0.045);
+    }
+
+    select.input {
+      cursor: pointer;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='7' viewBox='0 0 11 7'%3E%3Cpath d='M1 1l4.5 4.5L10 1' stroke='%23AAAAAA' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 1rem center;
+      padding-right: 2.5rem;
+    }
+
+    select.input option {
+      background: var(--bg);
+      color: var(--text-1);
+    }
+
+    .btn-submit {
+      display: block;
+      width: 100%;
+      background: var(--accent);
+      color: #fff;
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+      padding: 1rem;
+      margin-top: 0.5rem;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+    }
+
+    .btn-submit:hover {
+      background: var(--accent-hover);
+      transform: translateY(-1px);
+      box-shadow: 0 8px 22px rgba(232, 69, 10, 0.32);
+    }
+
+    .form-note {
+      font-size: 0.78rem;
+      color: var(--text-2);
+      text-align: center;
+      margin-top: 1rem;
+    }
+
+    .thanks {
+      display: none;
+      text-align: center;
+      padding: 3.5rem 1rem;
+    }
+
+    .thanks p {
+      font-size: 1.25rem;
+      font-weight: 500;
+      color: var(--text-1);
+    }
+
+    .credibility {
+      font-size: 0.82rem;
+      font-weight: 300;
+      color: var(--text-2);
+      max-width: 460px;
+      margin-inline: auto;
+      margin-top: 3rem;
+      text-align: center;
+      line-height: 1.7;
+    }
+
+    /* ── Footer ────────────────────────────────────────────── */
+    .site-footer {
+      background: var(--bg);
+      border-top: 1px solid var(--border);
+      padding-block: 2rem;
+    }
+
+    .footer-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-links {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .footer-links a {
+      font-size: 0.85rem;
+      font-weight: 400;
+      color: var(--text-2);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--text-1); }
+
+    .footer-copy {
+      text-align: center;
+      font-size: 0.78rem;
+      font-weight: 300;
+      color: var(--text-2);
+    }
+
+    /* ── Scroll-reveal ─────────────────────────────────────── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .d1 { transition-delay: 0.08s; }
+    .d2 { transition-delay: 0.18s; }
+    .d3 { transition-delay: 0.28s; }
+    .d4 { transition-delay: 0.38s; }
+
+    /* ── Responsive ────────────────────────────────────────── */
+    @media (max-width: 760px) {
+      .steps {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+
+      .footer-row {
+        flex-direction: column;
+        gap: 1.25rem;
+        text-align: center;
+      }
+
+      .footer-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+      }
+    }
+
+    /* ── Reduced motion ────────────────────────────────────── */
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+
+      .scroll-hint__line { animation: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── Navigation ──────────────────────────────────────── -->
+  <header class="site-nav" id="site-nav">
+    <div class="wrap">
+      <a href="/" class="logo" aria-label="GRTA.AI home">GRT<em>A</em>.AI</a>
+      <a href="#access" class="btn-nav">Request access</a>
+    </div>
+  </header>
+
+  <!-- ── Hero ────────────────────────────────────────────── -->
+  <section id="hero" aria-label="Hero">
+    <canvas id="particle-canvas" aria-hidden="true"></canvas>
+
+    <div class="hero-inner">
+      <h1 class="hero-headline">The best team for any problem.<br>Already inside your&nbsp;organisation.</h1>
+      <p class="hero-sub">GRTA assembles expert teams across functions, departments, and borders — in hours, not weeks.</p>
+      <a href="#access" class="btn-primary">
+        Request early access
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+
+    <div class="scroll-hint" aria-hidden="true">
+      <span>Scroll</span>
+      <div class="scroll-hint__line"></div>
+    </div>
+  </section>
+
+  <!-- ── Problem ─────────────────────────────────────────── -->
+  <section id="problem" class="section" aria-labelledby="problem-heading">
+    <div class="wrap center">
+      <span class="label reveal">Why it matters</span>
+      <h2 id="problem-heading" class="problem-heading reveal d1">
+        Your organisation grows.<br>Coordination&nbsp;doesn't.
+      </h2>
+      <ul class="beats" aria-label="Growth challenges">
+        <li class="reveal d1">— At 50 people, you stop knowing who knows what.</li>
+        <li class="reveal d2">— At 100, every decision waits for the right meeting.</li>
+        <li class="reveal d3">— At 150+, the expertise you need exists. Finding it&nbsp;doesn't.</li>
+      </ul>
+      <p class="problem-close reveal d4">The problem isn't talent. It's visibility.</p>
+    </div>
+  </section>
+
+  <!-- ── Solution ────────────────────────────────────────── -->
+  <section id="solution" class="section" aria-labelledby="solution-heading">
+    <div class="wrap center">
+      <span class="label reveal">How it works</span>
+      <p class="solution-intro reveal d1">
+        GRTA gives leaders a new kind of intelligence — the ability to see across the whole organisation and assemble exactly the right team for any project, brief, or decision.
+      </p>
+      <div class="steps" role="list">
+        <div class="step reveal d1" role="listitem">
+          <div class="step-num" aria-hidden="true">01</div>
+          <h3 class="step-title">Brief</h3>
+          <p class="step-desc">Describe your project in plain language. GRTA defines the expertise you need — including the gaps you didn't know to ask for.</p>
+        </div>
+        <div class="step reveal d2" role="listitem">
+          <div class="step-num" aria-hidden="true">02</div>
+          <h3 class="step-title">Match</h3>
+          <p class="step-desc">AI maps your talent pool, scores coverage, and proposes team variants. Execution-focused, challenger, or innovation — you choose.</p>
+        </div>
+        <div class="step reveal d3" role="listitem">
+          <div class="step-num" aria-hidden="true">03</div>
+          <h3 class="step-title">Assemble</h3>
+          <p class="step-desc">Outreach is handled. Availability is checked. Your team is ready.</p>
+        </div>
+      </div>
+      <p class="solution-close reveal">Brief the problem. Get the team. Move.</p>
+    </div>
+  </section>
+
+  <!-- ── Proof ────────────────────────────────────────────── -->
+  <section id="proof" class="section" aria-labelledby="proof-heading">
+    <div class="wrap center">
+      <span class="label reveal">In pilot</span>
+      <p class="proof-lead reveal d1">Currently in pilot with</p>
+      <p id="proof-heading" class="proof-orgs reveal d2">
+        IT-branchen<span class="proof-dot" aria-hidden="true">·</span>DTU&nbsp;Skylab<span class="proof-dot" aria-hidden="true">·</span>Makerere&nbsp;University
+      </p>
+      <p class="proof-footer reveal d3">Pilot programmes running across Denmark and Uganda</p>
+    </div>
+  </section>
+
+  <!-- ── Lead Capture ─────────────────────────────────────── -->
+  <section id="access" class="section" aria-labelledby="access-heading">
+    <div class="wrap center">
+      <span class="label reveal">Get early access</span>
+      <h2 id="access-heading" class="access-heading reveal d1">Stop searching.<br>Start assembling.</h2>
+      <p class="access-desc reveal d2">GRTA is currently in closed pilot. Leave your details and we will be in touch when we open the next cohort.</p>
+
+      <div class="form-wrap reveal d3">
+        <form id="access-form" novalidate>
+          <div class="field">
+            <label for="f-name">Full name</label>
+            <input class="input" type="text" id="f-name" name="name" placeholder="Your full name" required autocomplete="name">
+          </div>
+          <div class="field">
+            <label for="f-email">Work email</label>
+            <input class="input" type="email" id="f-email" name="email" placeholder="you@company.com" required autocomplete="email">
+          </div>
+          <div class="field">
+            <label for="f-company">Company name</label>
+            <input class="input" type="text" id="f-company" name="company" placeholder="Your organisation" required autocomplete="organization">
+          </div>
+          <div class="field">
+            <label for="f-size">Organisation size</label>
+            <select class="input" id="f-size" name="size" required>
+              <option value="" disabled selected>Select size</option>
+              <option value="1-50">1–50</option>
+              <option value="51-200">51–200</option>
+              <option value="201-1000">201–1000</option>
+              <option value="1000+">1000+</option>
+            </select>
+          </div>
+          <button type="submit" class="btn-submit">Request early access →</button>
+          <p class="form-note">We will never share your details. No spam, ever.</p>
+        </form>
+
+        <div class="thanks" id="form-thanks" role="status" aria-live="polite">
+          <p>Thank you. We will be in touch soon.</p>
+        </div>
+      </div>
+
+      <p class="credibility reveal">Built by a team with 25+ years in data-driven business development, enterprise technology, and organisational design.</p>
+    </div>
+  </section>
+
+  <!-- ── Footer ───────────────────────────────────────────── -->
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-row">
+        <a href="/" class="logo" aria-label="GRTA.AI home">GRT<em>A</em>.AI</a>
+        <nav class="footer-links" aria-label="Footer">
+          <a href="/privacy-policy.html">Privacy Policy</a>
+          <a href="/terms-of-service.html">Terms of Service</a>
+          <a href="https://app.grta.ai" target="_blank" rel="noopener noreferrer">Login</a>
+        </nav>
+      </div>
+      <p class="footer-copy">© 2026 GRTA.AI. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+  /* ── Particle canvas ──────────────────────────────────── */
+  (function () {
+    const canvas = document.getElementById('particle-canvas');
+    const ctx = canvas.getContext('2d');
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    let W, H, particles, raf;
+
+    const CFG = {
+      count:      75,
+      maxDist:    140,
+      speedMin:   0.12,
+      speedMax:   0.38,
+      sizeMin:    0.8,
+      sizeMax:    2.2,
+      lineAlpha:  0.07,      /* connection line max opacity */
+      dotAlpha:   [0.25, 0.7],
+    };
+
+    function resize() {
+      W = canvas.width  = canvas.offsetWidth;
+      H = canvas.height = canvas.offsetHeight;
+    }
+
+    function rand(a, b) { return Math.random() * (b - a) + a; }
+
+    class P {
+      constructor(init) {
+        this.x   = rand(0, W);
+        this.y   = init ? rand(0, H) : rand(-20, H + 20);
+        this.vx  = rand(-CFG.speedMax, CFG.speedMax);
+        this.vy  = rand(-CFG.speedMax, CFG.speedMax);
+        /* ensure minimum speed */
+        if (Math.abs(this.vx) < CFG.speedMin) this.vx = CFG.speedMin * Math.sign(this.vx || 1);
+        if (Math.abs(this.vy) < CFG.speedMin) this.vy = CFG.speedMin * Math.sign(this.vy || 1);
+        this.r    = rand(CFG.sizeMin, CFG.sizeMax);
+        this.a    = rand(CFG.dotAlpha[0], CFG.dotAlpha[1]);
+        this.da   = rand(0.001, 0.004) * (Math.random() > 0.5 ? 1 : -1);
+        this.orange = Math.random() < 0.12;   /* ~12% orange */
+      }
+
+      step() {
+        this.x += this.vx;
+        this.y += this.vy;
+        this.a  += this.da;
+        if (this.a > CFG.dotAlpha[1]) { this.a = CFG.dotAlpha[1]; this.da *= -1; }
+        if (this.a < CFG.dotAlpha[0]) { this.a = CFG.dotAlpha[0]; this.da *= -1; }
+        /* wrap */
+        if (this.x < -12) this.x = W + 12;
+        if (this.x > W + 12) this.x = -12;
+        if (this.y < -12) this.y = H + 12;
+        if (this.y > H + 12) this.y = -12;
+      }
+
+      draw() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
+        ctx.fillStyle = this.orange
+          ? `rgba(232,69,10,${this.a})`
+          : `rgba(255,255,255,${this.a * 0.65})`;
+        ctx.fill();
+      }
+    }
+
+    function links() {
+      for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+          const dx = particles[i].x - particles[j].x;
+          const dy = particles[i].y - particles[j].y;
+          const d  = Math.sqrt(dx * dx + dy * dy);
+          if (d < CFG.maxDist) {
+            const a = CFG.lineAlpha * (1 - d / CFG.maxDist);
+            ctx.beginPath();
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.strokeStyle = `rgba(255,255,255,${a})`;
+            ctx.lineWidth = 0.5;
+            ctx.stroke();
+          }
+        }
+      }
+    }
+
+    function loop() {
+      ctx.clearRect(0, 0, W, H);
+      links();
+      particles.forEach(p => { p.step(); p.draw(); });
+      raf = requestAnimationFrame(loop);
+    }
+
+    function init() {
+      resize();
+      particles = Array.from({ length: CFG.count }, (_, i) => new P(true));
+      if (reducedMotion) {
+        /* static render only */
+        links();
+        particles.forEach(p => p.draw());
+      } else {
+        loop();
+      }
+    }
+
+    window.addEventListener('resize', () => {
+      resize();
+      particles = Array.from({ length: CFG.count }, () => new P(true));
+    });
+
+    init();
+  })();
+
+  /* ── Scroll reveal ────────────────────────────────────── */
+  (function () {
+    const els = document.querySelectorAll('.reveal');
+    if (!els.length) return;
+
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          obs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+    els.forEach(el => obs.observe(el));
+  })();
+
+  /* ── Form submission ──────────────────────────────────── */
+  (function () {
+    const form   = document.getElementById('access-form');
+    const thanks = document.getElementById('form-thanks');
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      form.style.display   = 'none';
+      thanks.style.display = 'block';
+    });
+  })();
+
+  /* ── Nav background on scroll ─────────────────────────── */
+  (function () {
+    const nav = document.getElementById('site-nav');
+    window.addEventListener('scroll', function () {
+      nav.style.background = window.scrollY > 60
+        ? 'rgba(13,27,42,0.97)'
+        : 'rgba(13,27,42,0.82)';
+    }, { passive: true });
+  })();
+  </script>
+
+</body>
+</html>

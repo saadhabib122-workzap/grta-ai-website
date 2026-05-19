@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — GRTA.AI</title>
+  <meta name="description" content="GRTA.AI Privacy Policy">
+  <meta name="robots" content="noindex">
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='5' fill='%23E8450A'/%3E%3Ctext x='16' y='22.5' font-family='Inter%2C sans-serif' font-size='19' font-weight='600' fill='%23FFFFFF' text-anchor='middle'%3EG%3C/text%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:     #0D1B2A;
+      --accent: #E8450A;
+      --text-1: #FFFFFF;
+      --text-2: #AAAAAA;
+      --border: rgba(255,255,255,0.09);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text-1);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Nav */
+    .site-nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      height: 68px;
+      display: flex;
+      align-items: center;
+      background: rgba(13,27,42,0.95);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .wrap {
+      max-width: 720px;
+      margin-inline: auto;
+      padding-inline: clamp(1.25rem, 5vw, 2.5rem);
+      width: 100%;
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 1.3rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      color: var(--text-1);
+      text-decoration: none;
+    }
+
+    .logo em { color: var(--accent); font-style: normal; }
+
+    .back-link {
+      font-size: 0.825rem;
+      font-weight: 400;
+      color: var(--text-2);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: color 0.2s;
+    }
+
+    .back-link:hover { color: var(--text-1); }
+
+    /* Draft banner */
+    .draft-banner {
+      background: rgba(232, 69, 10, 0.1);
+      border: 1px solid rgba(232, 69, 10, 0.3);
+      padding: 0.875rem 1.25rem;
+      margin-bottom: 3rem;
+    }
+
+    .draft-banner p {
+      font-size: 0.85rem;
+      font-weight: 400;
+      color: var(--text-2);
+      line-height: 1.5;
+    }
+
+    .draft-banner strong {
+      color: var(--accent);
+      font-weight: 500;
+    }
+
+    /* Content */
+    main {
+      padding-block: 4rem 6rem;
+    }
+
+    .doc-header {
+      margin-bottom: 3.5rem;
+      padding-bottom: 2.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .doc-label {
+      display: block;
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    .doc-title {
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      font-weight: 600;
+      letter-spacing: -0.025em;
+      line-height: 1.15;
+      margin-bottom: 1rem;
+    }
+
+    .doc-meta {
+      font-size: 0.85rem;
+      font-weight: 300;
+      color: var(--text-2);
+    }
+
+    /* Sections */
+    .doc-section {
+      margin-bottom: 3rem;
+    }
+
+    .doc-section h2 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      margin-bottom: 1rem;
+      padding-bottom: 0.625rem;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .doc-section h2 .num {
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      opacity: 0.8;
+    }
+
+    .doc-section p {
+      font-size: 0.95rem;
+      font-weight: 300;
+      color: var(--text-2);
+      margin-bottom: 1rem;
+    }
+
+    .doc-section ul {
+      list-style: none;
+      margin-bottom: 1rem;
+    }
+
+    .doc-section ul li {
+      font-size: 0.95rem;
+      font-weight: 300;
+      color: var(--text-2);
+      padding: 0.3rem 0 0.3rem 1.25rem;
+      position: relative;
+    }
+
+    .doc-section ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.75rem;
+      width: 4px;
+      height: 4px;
+      background: var(--accent);
+      border-radius: 50%;
+      opacity: 0.7;
+    }
+
+    /* Footer */
+    .doc-footer {
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+      text-align: center;
+    }
+
+    .doc-footer p {
+      font-size: 0.78rem;
+      font-weight: 300;
+      color: var(--text-2);
+      margin-bottom: 0.5rem;
+    }
+
+    .doc-footer a {
+      color: var(--text-2);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .doc-footer a:hover { color: var(--text-1); }
+  </style>
+</head>
+<body>
+
+  <header class="site-nav">
+    <div class="wrap">
+      <div class="nav-inner">
+        <a href="/" class="logo">GRT<em>A</em>.AI</a>
+        <a href="/" class="back-link">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+            <path d="M9 2L4 7l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Back to home
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap">
+
+      <div class="draft-banner" role="note">
+        <p><strong>Draft document.</strong> This is a placeholder document requiring legal review before publication. The content below does not constitute legal advice and should not be relied upon as such.</p>
+      </div>
+
+      <div class="doc-header">
+        <span class="doc-label">Legal</span>
+        <h1 class="doc-title">Privacy Policy</h1>
+        <p class="doc-meta">Last updated: May 2026 &nbsp;·&nbsp; GRTA.AI</p>
+      </div>
+
+      <div class="doc-section">
+        <h2><span class="num">01</span> What data we collect</h2>
+        <p>
+          [PLACEHOLDER — Legal review required] GRTA.AI collects personal data that you provide directly when using our platform or requesting early access. This may include:
+        </p>
+        <ul>
+          <li>Name, work email address, and employer/organisation name</li>
+          <li>Organisation size and role information provided during sign-up</li>
+          <li>Usage data, including pages visited, features accessed, and interaction logs</li>
+          <li>Device and browser information collected automatically via cookies and similar technologies</li>
+          <li>Communications you send to us, including support requests</li>
+        </ul>
+        <p>
+          [PLACEHOLDER] We do not collect sensitive personal data as defined under GDPR Article 9 unless explicitly required and consented to.
+        </p>
+      </div>
+
+      <div class="doc-section">
+        <h2><span class="num">02</span> How we use your data</h2>
+        <p>
+          [PLACEHOLDER — Legal review required] We use collected data for the following purposes:
+        </p>
+        <ul>
+          <li>To operate, maintain, and improve the GRTA.AI platform</li>
+          <li>To contact you about your access request, pilot participation, and product updates</li>
+          <li>To analyse usage patterns and improve user experience</li>
+          <li>To comply with legal obligations and enforce our terms of service</li>
+          <li>To prevent fraud and ensure platform security</li>
+        </ul>
+        <p>
+          [PLACEHOLDER] We rely on the following lawful bases under GDPR: contractual necessity, legitimate interest, and — where required — explicit consent. A full lawful basis assessment should be documented here following legal review.
+        </p>
+      </div>
+
+      <div class="doc-section">
+        <h2><span class="num">03</span> Data storage and security</h2>
+        <p>
+          [PLACEHOLDER — Legal review required] Your data is stored on servers located within the European Economic Area (EEA). We implement appropriate technical and organisational security measures to protect your personal data against unauthorised access, loss, or destruction.
+        </p>
+        <p>
+          [PLACEHOLDER] Data retention periods, third-party processors, and specific security certifications should be detailed here following legal and technical review. We do not sell your personal data to third parties.
+        </p>
+        <ul>
+          <li>Access to personal data is restricted to authorised personnel on a need-to-know basis</li>
+          <li>Data in transit is encrypted using industry-standard TLS protocols</li>
+          <li>We conduct regular security reviews of our infrastructure [PLACEHOLDER — to be verified]</li>
+        </ul>
+      </div>
+
+      <div class="doc-section">
+        <h2><span class="num">04</span> Your rights under GDPR</h2>
+        <p>
+          [PLACEHOLDER — Legal review required] If you are located in the European Economic Area, you have the following rights regarding your personal data:
+        </p>
+        <ul>
+          <li><strong style="color:#fff;font-weight:500;">Right of access</strong> — you may request a copy of the personal data we hold about you</li>
+          <li><strong style="color:#fff;font-weight:500;">Right to rectification</strong> — you may request correction of inaccurate or incomplete data</li>
+          <li><strong style="color:#fff;font-weight:500;">Right to erasure</strong> — you may request deletion of your personal data in certain circumstances</li>
+          <li><strong style="color:#fff;font-weight:500;">Right to restriction</strong> — you may request that we limit how we use your data</li>
+          <li><strong style="color:#fff;font-weight:500;">Right to data portability</strong> — you may request your data in a structured, machine-readable format</li>
+          <li><strong style="color:#fff;font-weight:500;">Right to object</strong> — you may object to processing based on legitimate interest</li>
+          <li><strong style="color:#fff;font-weight:500;">Right to withdraw consent</strong> — where processing is based on consent, you may withdraw it at any time</li>
+        </ul>
+        <p>
+          [PLACEHOLDER] To exercise any of these rights, please contact us at the address below. We will respond within 30 days. You also have the right to lodge a complaint with your national supervisory authority.
+        </p>
+      </div>
+
+      <div class="doc-section">
+        <h2><span class="num">05</span> Contact us</h2>
+        <p>
+          [PLACEHOLDER — Legal review required] For questions, requests, or complaints regarding this privacy policy or our data practices, please contact:
+        </p>
+        <p>
+          GRTA.AI<br>
+          [Registered address — to be inserted]<br>
+          Email: <a href="mailto:privacy@grta.ai" style="color:var(--accent);">privacy@grta.ai</a>
+        </p>
+        <p>
+          [PLACEHOLDER] Data Protection Officer details, company registration number, and supervisory authority contact should be added following legal review.
+        </p>
+      </div>
+
+      <div class="doc-footer">
+        <p>© 2026 GRTA.AI. All rights reserved.</p>
+        <p><a href="/">Return to GRTA.AI</a></p>
+      </div>
+
+    </div>
+  </main>
+
+</body>
+</html>
