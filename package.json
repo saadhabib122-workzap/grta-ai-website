@@ -1,0 +1,45 @@
+{
+  "name": "grta.ai",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "predev": "node tools/sync_brand.js",
+    "dev": "next dev",
+    "prebuild": "node tools/sync_brand.js",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "brand:build": "node brand/src/build_tokens.js && node brand/src/build_logo.js && node brand/src/build_icons.js && node brand/src/build_motifs.js && node brand/src/build_exports.js && node brand/src/build_guidelines.js && node tools/render_pdf.js brand/guidelines.html brand/GRTA_Brand_Guidelines.pdf",
+    "plan:pdf": "node tools/render_pdf.js docs/plan/grta-overhaul-plan.html docs/plan/GRTA_Overhaul_Plan.pdf",
+    "review": "node tools/review_screenshot.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@fontsource/schibsted-grotesk": "^5.3.0",
+    "@tailwindcss/postcss": "^4.3.3",
+    "@types/node": "^26.6.5",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "eslint": "^9.39.5",
+    "eslint-config-next": "^16.4.2",
+    "opentype.js": "^2.0.0",
+    "puppeteer": "^25.0.4",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^6.0.3"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.135.0",
+    "@supabase/supabase-js": "^2.118.0",
+    "motion": "^14.4.0",
+    "next": "^16.4.2",
+    "next-intl": "^4.14.9",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "server-only": "^0.0.1",
+    "zod": "^4.6.7"
+  },
+  "private": true
+}

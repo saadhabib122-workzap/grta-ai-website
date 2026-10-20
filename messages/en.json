@@ -1,0 +1,973 @@
+{
+  "meta": {
+    "siteName": "GRTA",
+    "defaultTitle": "GRTA: People move work forward",
+    "defaultDescription": "GRTA helps HR and project teams bring the right people together around a real problem, at the right time. Collective Intelligence for better decisions.",
+    "home": {
+      "title": "GRTA: People move work forward",
+      "description": "Find the right people, around the right problem, at the right time. GRTA turns your organisation's Collective Intelligence into better decisions and action."
+    },
+    "how": {
+      "title": "How it works",
+      "description": "From a messy problem to an execution plan: how GRTA writes the brief, finds complementary people, and learns from every project."
+    },
+    "lab": {
+      "title": "Lab",
+      "description": "Try GRTA. Turn a messy paragraph into a brief, translate corporate buzzwords into real competencies, and compare team variants."
+    },
+    "partners": {
+      "title": "Partners",
+      "description": "GRTA works with universities and research environments as development partners, not customers."
+    },
+    "about": {
+      "title": "About",
+      "description": "Why GRTA exists, what we believe, and how we handle your data."
+    },
+    "legal": {
+      "title": "Privacy & terms",
+      "description": "How GRTA handles personal data, and the terms for using this website."
+    }
+  },
+  "nav": {
+    "skip": "Skip to content",
+    "home": "GRTA home",
+    "howItWorks": "How it works",
+    "lab": "Lab",
+    "partners": "Partners",
+    "about": "About",
+    "bookDemo": "Book a demo",
+    "logIn": "Log in",
+    "menu": "Menu",
+    "close": "Close",
+    "theme": "Switch light or dark",
+    "primary": "Main"
+  },
+  "footer": {
+    "tagline": "People move work forward.",
+    "equation": "AI + BI + CI = DI",
+    "explore": "Explore",
+    "company": "Company",
+    "contact": "Contact",
+    "legal": "Privacy & terms",
+    "bookDemo": "Book a demo",
+    "rights": "© {year} GRTA. All rights reserved.",
+    "together": "Be GRTA together."
+  },
+  "common": {
+    "learnMore": "Learn more",
+    "tryLab": "Try the Lab",
+    "seeHow": "See how it works",
+    "bookDemo": "Book a demo",
+    "comingSoon": "Coming soon",
+    "placeholderNote": "Illustration coming soon"
+  },
+  "contact": {
+    "label": "Talk to us",
+    "title": "Let's find your people.",
+    "lead": "Tell us a little about your organisation. We'll show you GRTA on a problem you actually have.",
+    "modalTitle": "Book a demo",
+    "modalLead": "A 30-minute conversation. We bring GRTA, you bring a real problem.",
+    "waitlistTitle": "Log in is on its way",
+    "waitlistLead": "The GRTA platform is in a closed pilot. Leave your details and we'll invite you when your organisation is set up.",
+    "name": "Name",
+    "email": "Work email",
+    "company": "Organisation",
+    "size": "Organisation size",
+    "sizePlaceholder": "Select size",
+    "role": "I am interested as",
+    "roles": {
+      "hr": "HR / People team",
+      "project": "Project or team builder",
+      "partner": "University or research partner",
+      "other": "Something else"
+    },
+    "message": "What would you like to solve? (optional)",
+    "messagePlaceholder": "For example: we need to staff a sustainability programme across three countries.",
+    "consent": "I agree that GRTA may contact me about my request. See our <link>privacy notice</link>.",
+    "submit": "Send request",
+    "sending": "Sending…",
+    "thanksTitle": "Thank you.",
+    "thanks": "We'll be in touch within two working days.",
+    "error": "That didn't work on our side. Please try again in a moment.",
+    "required": "Please fill in this field.",
+    "invalidEmail": "Please enter a valid email address.",
+    "privacyNote": "We never share your details."
+  },
+  "home": {
+    "hero": {
+      "label": "Collective Intelligence for organisations",
+      "title1": "People",
+      "title2": "move work",
+      "lead": "GRTA helps HR and project teams bring the right people together, around the right problem, at the right time.",
+      "ctaPrimary": "Book a demo",
+      "ctaSecondary": "Try the Lab",
+      "alt": "Six colleagues around a long wooden table in a bright room, deep in conversation, connected by fine threads of light.",
+      "title3": "forward."
+    },
+    "values": [
+      {
+        "icon": "match",
+        "title": "Connect the right people",
+        "text": "Match competencies, roles and context across the whole organisation, not just your own team."
+      },
+      {
+        "icon": "collective",
+        "title": "Complement, don't copy",
+        "text": "GRTA looks for people who see what you don't, not people who think like you."
+      },
+      {
+        "icon": "brief",
+        "title": "From insight to action",
+        "text": "Go from a messy problem to a clear brief, a team and a plan you can act on."
+      },
+      {
+        "icon": "spark",
+        "title": "Built for people and AI",
+        "text": "AI does the searching and structuring. People make the decisions."
+      }
+    ],
+    "doors": {
+      "label": "Pick your door",
+      "title": "Where are you coming from?",
+      "hr": {
+        "tab": "I work in HR",
+        "title": "See the competencies your organisation already has.",
+        "lead": "Most organisations know their job titles, not their people. GRTA builds living profiles from real work, so hidden talent becomes visible and useful.",
+        "challengesTitle": "Sound familiar?",
+        "challenges": [
+          "Skills data is outdated the day it is entered.",
+          "Talented people stay invisible outside their own department.",
+          "New strategies need competencies nobody has mapped."
+        ],
+        "useCasesTitle": "What GRTA does",
+        "useCases": [
+          "Living profiles that people actually want to keep up to date",
+          "Skills surplus and gap alerts, held against your strategy",
+          "The 7×7 Network to roll it out person to person"
+        ],
+        "demoPrompt": "We're moving our whole customer service to a new CRM next spring. I need people who know the old system, someone from IT, and probably a few team leads. Not sure what else.",
+        "alt": "Ingrid, an HR lead with a silver bob and round glasses, looking at a floating map of connected people at her window desk."
+      },
+      "project": {
+        "tab": "I build project teams",
+        "title": "Get the right team around your problem, this week.",
+        "lead": "Write what you need in plain words. GRTA turns it into a brief, spots what you forgot, and shows you available people who complement each other.",
+        "challengesTitle": "Sound familiar?",
+        "challenges": [
+          "Staffing a project means emails, favours and guesswork.",
+          "The perfect person is always fully booked.",
+          "You only see the blind spot once the project is late."
+        ],
+        "useCasesTitle": "What GRTA does",
+        "useCases": [
+          "Zero blank page: a structured brief from one paragraph",
+          "Only people who are actually available, with the reason why",
+          "Three team variants, plus one wildcard worth a look"
+        ],
+        "demoPrompt": "We need to cut CO2 in our supply chain by 30% before 2028 without raising costs. I want people from procurement and logistics, and someone who knows the data.",
+        "alt": "Kofi, a project lead in an oatmeal sweater, at a whiteboard with sticky notes, threads of light reaching toward him."
+      }
+    },
+    "demo": {
+      "label": "Try it now",
+      "title": "Start with a messy paragraph.",
+      "lead": "No forms, no drop-down menus. Describe your problem the way you'd tell a colleague.",
+      "more": "More in the Lab"
+    },
+    "hiit": {
+      "label": "The HIIT Engine",
+      "title": "From emergency to execution plan in 3 hours.",
+      "lead": "When something urgent lands, GRTA finds 9 complementary competencies, runs 3 short parallel meetings, and brings everything together into 1 plan.",
+      "steps": [
+        {
+          "n": "9",
+          "title": "competencies",
+          "text": "GRTA picks nine complementary perspectives in minutes."
+        },
+        {
+          "n": "3",
+          "title": "parallel meetings",
+          "text": "Three experts per room, 20 slides × 20 seconds each, then dialogue."
+        },
+        {
+          "n": "1",
+          "title": "execution plan",
+          "text": "One joint meeting turns three plans into one, with owners and deadlines."
+        }
+      ],
+      "cta": "See the method"
+    },
+    "learn": {
+      "label": "How it learns",
+      "title": "Every project makes the next match better.",
+      "lead": "After each project, the team answers five questions in under two minutes. GRTA compares what it predicted with what actually happened, and learns how your organisation really works.",
+      "steps": [
+        "Brief",
+        "Match",
+        "Work",
+        "Two-minute pulse"
+      ],
+      "center": "Smarter next time",
+      "note": "That history belongs to your organisation. It is also what no one can copy."
+    },
+    "partners": {
+      "label": "Developed together",
+      "title": "Built with universities and research environments.",
+      "text": "We develop GRTA with partners who challenge our assumptions, from technical universities in Scandinavia to university partnerships in East Africa.",
+      "cta": "Partner with us"
+    },
+    "trust": {
+      "title": "Trust is designed in, not added on.",
+      "items": [
+        {
+          "icon": "lock",
+          "title": "Your data stays yours",
+          "text": "Owned by your organisation. Never used to train shared models."
+        },
+        {
+          "icon": "risk-security",
+          "title": "GDPR first",
+          "text": "Built and hosted in the EU, with clear consent and purpose."
+        },
+        {
+          "icon": "scout",
+          "title": "Explainable",
+          "text": "Every suggestion shows why. No black boxes."
+        },
+        {
+          "icon": "customers",
+          "title": "People decide",
+          "text": "GRTA suggests. Your people make the call."
+        }
+      ]
+    }
+  },
+  "how": {
+    "hero": {
+      "label": "How it works",
+      "title": "From a messy problem to a team, a plan and a better next time.",
+      "lead": "Three chapters: what GRTA does for a team builder, the HIIT method for urgent problems, and how organisations roll it out person to person.",
+      "alt": "Nine colleagues in three small groups around a long table, their threads of light meeting above one glowing plan."
+    },
+    "chapters": {
+      "journey": "The journey",
+      "method": "The method",
+      "rollout": "Rolling it out"
+    },
+    "journey": {
+      "label": "Chapter 1",
+      "title": "The journey",
+      "lead": "Six steps, each one removing a bit of friction between a problem and the people who can solve it.",
+      "steps": [
+        {
+          "icon": "brief",
+          "title": "Zero blank page",
+          "text": "Write a paragraph in plain language. GRTA turns it into a structured brief with roles, competencies and timeline. You review and adjust."
+        },
+        {
+          "icon": "gap",
+          "title": "Gap detection",
+          "text": "GRTA compares your brief with similar projects that worked. If you forgot change management or legal, it tells you before anyone is matched."
+        },
+        {
+          "icon": "translate",
+          "title": "Plain-language translation",
+          "text": "People describe themselves in their own words. GRTA reads their past work and translates “I turn complexity into clarity” into competencies it can match."
+        },
+        {
+          "icon": "availability",
+          "title": "Availability first",
+          "text": "The best match is useless if they're fully booked. Unavailable people are left out or clearly flagged, with the reason."
+        },
+        {
+          "icon": "variants",
+          "title": "Team variants and the wildcard",
+          "text": "Choose between an Execution, a Challenger or an Innovation team. Each comes with a coverage map and an explanation. Sometimes there's a wildcard: someone unexpected, with evidence for why they could help."
+        },
+        {
+          "icon": "pulse",
+          "title": "Two-minute pulse",
+          "text": "When the project ends, five quick questions. GRTA learns which teams actually work in your organisation."
+        }
+      ],
+      "scout": {
+        "title": "Then GRTA starts looking ahead.",
+        "text": "With enough history, GRTA moves from answering to suggesting.",
+        "items": [
+          {
+            "title": "Skills surplus",
+            "text": "Spots clusters of talent that are under-used and suggests where they could make a difference."
+          },
+          {
+            "title": "Skills gap alerts",
+            "text": "Holds your strategy against the competencies you actually have, so you know early what to build or hire."
+          },
+          {
+            "title": "Cross-silo opportunities",
+            "text": "Introduces people in different departments whose work fits together, before anyone asked."
+          }
+        ]
+      }
+    },
+    "method": {
+      "label": "Chapter 2",
+      "title": "The HIIT Engine: 9 → 3 → 1",
+      "lead": "For urgent, high-stakes questions. High-intensity, time-boxed, and built to end in action.",
+      "phases": [
+        {
+          "time": "Minutes",
+          "title": "Describe the problem",
+          "text": "One prompt. GRTA finds 9 complementary competencies across the organisation."
+        },
+        {
+          "time": "10 to 60 min",
+          "title": "Experts prepare",
+          "text": "Each expert prepares a 20×20 presentation with AI help: 20 slides, 20 seconds each."
+        },
+        {
+          "time": "Hour 2",
+          "title": "3 parallel HIIT meetings",
+          "text": "Three experts per room present, reflect and agree an action plan."
+        },
+        {
+          "time": "Hour 3",
+          "title": "1 joint meeting",
+          "text": "AI turns each plan into a 20×20 summary. Together, the group sets priorities and agrees one execution plan."
+        }
+      ],
+      "formatTitle": "One HIIT meeting, 60 minutes",
+      "format": [
+        {
+          "label": "Intro",
+          "minutes": 5
+        },
+        {
+          "label": "Expert 1 · 20×20",
+          "minutes": 6.67,
+          "strong": true
+        },
+        {
+          "label": "Notes",
+          "minutes": 1.5
+        },
+        {
+          "label": "Expert 2 · 20×20",
+          "minutes": 6.67,
+          "strong": true
+        },
+        {
+          "label": "Notes",
+          "minutes": 1.5
+        },
+        {
+          "label": "Expert 3 · 20×20",
+          "minutes": 6.67,
+          "strong": true
+        },
+        {
+          "label": "Notes",
+          "minutes": 1.5
+        },
+        {
+          "label": "Dialogue & reflection",
+          "minutes": 30
+        }
+      ],
+      "competenciesTitle": "The 9 competencies",
+      "competencies": [
+        {
+          "icon": "strategy",
+          "name": "Strategy"
+        },
+        {
+          "icon": "economy",
+          "name": "Economy & finance"
+        },
+        {
+          "icon": "legal",
+          "name": "Legal & compliance"
+        },
+        {
+          "icon": "operations",
+          "name": "Operations"
+        },
+        {
+          "icon": "supply-chain",
+          "name": "Supply chain"
+        },
+        {
+          "icon": "customers",
+          "name": "Customers & market"
+        },
+        {
+          "icon": "technology-data",
+          "name": "Technology & data"
+        },
+        {
+          "icon": "communication",
+          "name": "Communication & brand"
+        },
+        {
+          "icon": "risk-security",
+          "name": "Risk & security"
+        }
+      ],
+      "aiRole": {
+        "title": "What the AI does",
+        "items": [
+          "Transcribes every meeting",
+          "Generates the 20×20 summaries",
+          "Distils and connects the content",
+          "Suggests priorities"
+        ]
+      },
+      "cta": "Try the simulator",
+      "flowTitle": "Three conversations become one plan",
+      "flowText": "Nine perspectives meet in three small rooms at the same time. Each room agrees what matters. Then everything comes together in one plan, with owners and deadlines."
+    },
+    "rollout": {
+      "label": "Chapter 3",
+      "title": "Rolling it out",
+      "lead": "Technology is the easy part. GRTA grows through people helping people.",
+      "cookbookTitle": "The Organisation Cookbook",
+      "cookbookLead": "Ten steps to a living, searchable organisation.",
+      "cookbook": [
+        {
+          "title": "Define the purpose",
+          "text": "What do we want to achieve together?"
+        },
+        {
+          "title": "Set up your GRTA",
+          "text": "Structure, roles, permissions and data security."
+        },
+        {
+          "title": "Add organisational context",
+          "text": "Strategy, products, markets and your own terminology."
+        },
+        {
+          "title": "Invite your people",
+          "text": "Explain why, create trust, offer help."
+        },
+        {
+          "title": "Build rich profiles",
+          "text": "Experience, skills, ambitions and what people want to contribute."
+        },
+        {
+          "title": "Start the 7×7 Network",
+          "text": "Small groups of seven help each other get going."
+        },
+        {
+          "title": "Let it grow",
+          "text": "Give data and relationships time. Quality before speed."
+        },
+        {
+          "title": "Train with real cases",
+          "text": "Practice on actual problems and find the unexpected."
+        },
+        {
+          "title": "Improve and scale",
+          "text": "Close the gaps, sharpen matching, update terms."
+        },
+        {
+          "title": "Go live, create value",
+          "text": "Start with concrete projects and learn as you go."
+        }
+      ],
+      "profileTitle": "The Profile Recipe",
+      "profileLead": "What GRTA needs to understand a person. Not a CV: a living picture.",
+      "profile": [
+        "Experience and past projects",
+        "Competencies, shown in real work",
+        "Interests and ambitions",
+        "Languages and tools",
+        "What they'd like to contribute to",
+        "Availability and preferred ways of working"
+      ],
+      "networkTitle": "The 7×7 Network",
+      "networkLead": "Groups of seven. One guide helps the other six. That guide belongs to another group of seven, with a guide of their own. And so on, across the whole organisation.",
+      "networkPrinciples": [
+        {
+          "title": "Voluntary, with ownership",
+          "text": "A network, not a hierarchy."
+        },
+        {
+          "title": "Across silos",
+          "text": "Mixed departments, levels and locations."
+        },
+        {
+          "title": "People before systems",
+          "text": "The relationship creates the value."
+        },
+        {
+          "title": "No question too small",
+          "text": "Everyone can ask, everyone can help."
+        }
+      ],
+      "networkCta": "Grow a network in the Lab",
+      "guide": "Guide",
+      "member": "Member"
+    },
+    "artifacts": {
+      "brief": {
+        "label": "Brief",
+        "input": "We need to cut CO2 in our supply chain by 30% before 2028 without raising costs. People from procurement and logistics, and someone who knows the data.",
+        "goal": "Goal",
+        "goalValue": "Cut supply-chain CO2 by 30%",
+        "timeline": "Timeline",
+        "timelineValue": "Before 2028",
+        "roles": "Roles",
+        "roleList": [
+          "Procurement",
+          "Logistics",
+          "Data analyst",
+          "Finance"
+        ]
+      },
+      "gap": {
+        "label": "Gap check",
+        "have": [
+          "Supply chain",
+          "Technology & data",
+          "Economy & finance"
+        ],
+        "missing": "Change management",
+        "message": "Projects like this usually need change management. You haven’t asked for any. Add it?",
+        "add": "Add to brief",
+        "added": "Added to the brief"
+      },
+      "translate": {
+        "label": "Translation",
+        "quote": "I turn complexity into clarity.",
+        "tags": [
+          {
+            "label": "Stakeholder communication",
+            "value": 78
+          },
+          {
+            "label": "Executive reporting",
+            "value": 64
+          },
+          {
+            "label": "Requirements definition",
+            "value": 55
+          }
+        ],
+        "because": "Backed by 6 past projects and peer feedback."
+      },
+      "availability": {
+        "label": "Availability",
+        "available": "Available",
+        "people": [
+          {
+            "name": "Emil Strand",
+            "role": "Data scientist",
+            "status": "available"
+          },
+          {
+            "name": "Aisha Diallo",
+            "role": "Brand manager",
+            "status": "partial",
+            "note": "2 days a week"
+          },
+          {
+            "name": "Nora Eide",
+            "role": "Logistics planner",
+            "status": "busy",
+            "note": "ERP migration until March"
+          },
+          {
+            "name": "Selma Aydın",
+            "role": "Legal counsel",
+            "status": "available"
+          }
+        ],
+        "hidden": "Strong matches who are busy are flagged, with the reason."
+      },
+      "variants": {
+        "label": "Team variants",
+        "names": [
+          "Execution",
+          "Challenger",
+          "Innovation"
+        ],
+        "coverage": "Coverage",
+        "rows": [
+          "Strategy",
+          "Supply chain",
+          "Tech & data",
+          "Finance",
+          "Legal",
+          "Comms"
+        ],
+        "strong": "Strong",
+        "adequate": "Adequate",
+        "gap": "Gap",
+        "wildcardTitle": "Wildcard:",
+        "wildcard": "Lars, operations analyst. Finds bottlenecks before launch."
+      },
+      "pulse": {
+        "label": "Two-minute pulse",
+        "questions": [
+          "The team had the right skills",
+          "People were available",
+          "We reached the goal",
+          "I’d work with them again",
+          "The brief was clear"
+        ],
+        "learnedTitle": "Learned.",
+        "learned": "Next match for teams like this: +4% accuracy."
+      }
+    }
+  },
+  "lab": {
+    "hero": {
+      "label": "Lab",
+      "title": "Try GRTA on a real problem.",
+      "lead": "These demos run on Nordlys Group, a fictional company of 48 people. No real personal data is used.",
+      "alt": "Kofi writing in a notebook while his messy scribbles turn into a neat stack of glowing blocks, one slot marked with an orange spark."
+    },
+    "tabs": {
+      "brief": "Zero blank page",
+      "translate": "Buzzword translator",
+      "team": "Team variants",
+      "hiit": "9 → 3 → 1",
+      "network": "7×7 grower"
+    },
+    "aiNote": "Runs on Claude when connected; otherwise a built-in engine gives a simpler result.",
+    "engineLive": "AI engine",
+    "engineLocal": "Built-in engine",
+    "brief": {
+      "title": "Zero blank page",
+      "lead": "Describe a problem the way you'd tell a colleague. GRTA writes the brief and checks what's missing.",
+      "inputLabel": "Your problem, in plain words",
+      "examples": "Examples",
+      "exampleList": [
+        "We need to cut CO2 in our supply chain by 30% before 2028 without raising costs. I want people from procurement and logistics, and someone who knows the data.",
+        "We're moving our whole customer service to a new CRM next spring. I need people who know the old system, someone from IT, and probably a few team leads.",
+        "Our new app launches in eight weeks. We have developers and designers but no idea how to market it in Germany."
+      ],
+      "submit": "Write my brief",
+      "working": "Reading your paragraph…",
+      "outTitle": "Your brief",
+      "goal": "Goal",
+      "timeline": "Timeline",
+      "roles": "Roles",
+      "competencies": "Competencies",
+      "gapTitle": "Before we match anyone",
+      "gapCta": "Add to brief",
+      "added": "Added",
+      "noGaps": "This brief looks complete. Nice.",
+      "toTeam": "Find a team for this brief",
+      "empty": "Your brief will appear here."
+    },
+    "translate": {
+      "title": "Buzzword translator",
+      "lead": "Paste how someone describes themselves. GRTA translates it into competencies it can actually match, and says why.",
+      "inputLabel": "A self-description",
+      "examples": [
+        "I turn complexity into clarity.",
+        "Synergy architect who streamlines ideation across stakeholders.",
+        "I'm the person people call when the numbers don't add up."
+      ],
+      "submit": "Translate",
+      "working": "Translating…",
+      "outTitle": "What GRTA hears",
+      "because": "Because",
+      "confidence": "confidence",
+      "card": "Translated by GRTA",
+      "copy": "Copy result",
+      "copied": "Copied",
+      "empty": "The translation will appear here."
+    },
+    "team": {
+      "title": "Team variants & the wildcard",
+      "lead": "Pick a brief. GRTA proposes three teams from Nordlys Group, each built for a different kind of energy.",
+      "briefLabel": "Brief",
+      "variants": {
+        "execution": {
+          "name": "Execution",
+          "text": "Deep domain expertise and a reliable track record. Your safe bet."
+        },
+        "challenger": {
+          "name": "Challenger",
+          "text": "Mixed backgrounds and constructive friction. Tests every assumption."
+        },
+        "innovation": {
+          "name": "Innovation",
+          "text": "People new to this domain. Fresh eyes, novel ideas."
+        }
+      },
+      "coverage": "Coverage",
+      "strong": "Strong",
+      "adequate": "Adequate",
+      "gap": "Gap",
+      "fit": "fit",
+      "why": "Why",
+      "unavailable": "Not available",
+      "unavailableTitle": "Strong matches who are busy",
+      "wildcard": "Wildcard",
+      "wildcardIntro": "This one may look unusual. Here's why we think {name} could help.",
+      "teamScore": "Team coverage",
+      "diversity": "Perspective spread"
+    },
+    "hiit": {
+      "title": "9 → 3 → 1 simulator",
+      "lead": "Enter an urgent question. Watch GRTA pick nine perspectives, split them into three rooms, and converge on one plan.",
+      "inputLabel": "Your urgent question",
+      "example": "How do we cut CO2 in our supply chain by 30% before 2028 without raising costs?",
+      "submit": "Run the engine",
+      "working": "Assembling the rooms…",
+      "stageNine": "9 perspectives",
+      "stageThree": "3 rooms",
+      "stageOne": "1 plan",
+      "room": "Room",
+      "planTitle": "Draft execution plan",
+      "priority": "Priority",
+      "action": "Action",
+      "owner": "Owner",
+      "deadline": "Deadline",
+      "kpi": "KPI",
+      "print": "Download as PDF",
+      "disclaimer": "A simulation with fictional people. A real HIIT session uses your own experts."
+    },
+    "network": {
+      "title": "7×7 network grower",
+      "lead": "How does help spread through an organisation of your size? One guide helps six. Each layer reaches seven times further.",
+      "sizeLabel": "People in your organisation",
+      "guides": "GRTA guides needed",
+      "layers": "Layers",
+      "weeks": "Weeks to reach everyone",
+      "weeksNote": "assuming each layer takes {n} weeks to settle",
+      "replay": "Grow again"
+    },
+    "pulse": {
+      "title": "Two-minute pulse",
+      "lead": "How useful was this? Five quick questions. This is the same loop GRTA uses after real projects.",
+      "questions": [
+        "The result was relevant to my problem",
+        "The explanation helped me trust it",
+        "It surfaced something I hadn't thought of",
+        "I'd use this with my own team",
+        "It was quick and easy"
+      ],
+      "scale": [
+        "Not at all",
+        "Fully"
+      ],
+      "submit": "Send",
+      "thanks": "Thank you. That's exactly how GRTA learns.",
+      "timer": "{s}s"
+    },
+    "errors": {
+      "tooShort": "Write a little more, at least a sentence or two.",
+      "rateLimited": "You've tried a lot today. Book a demo to see the full version.",
+      "failed": "That didn't work on our side. We used the built-in engine instead."
+    }
+  },
+  "partners": {
+    "hero": {
+      "label": "Partners",
+      "title": "We're not looking for customers here. We're looking for co-developers.",
+      "lead": "GRTA is developed together with universities and research environments that want to challenge how organisations understand and connect competencies.",
+      "alt": "A student and a researcher in a bright university library, a long thread of light running out of the window toward the horizon."
+    },
+    "questions": {
+      "title": "The questions we're working on",
+      "items": [
+        "How can AI understand people's actual competencies and potential, not just their job titles?",
+        "How do you find complementary competencies rather than people who are similar?",
+        "How do you assemble the right team around a specific problem?",
+        "How do you uncover competencies an organisation doesn't know it has?"
+      ]
+    },
+    "exchange": {
+      "title": "What each side brings",
+      "we": "We bring",
+      "weItems": [
+        "A working platform",
+        "Our models, IP and methods",
+        "Real use cases and experience",
+        "A team committed to building it with you"
+      ],
+      "you": "Partners bring",
+      "youItems": [
+        "Students and researchers",
+        "New perspectives and hard questions",
+        "An environment to test our assumptions",
+        "A community to try GRTA on"
+      ]
+    },
+    "path": {
+      "title": "A pathway, not a big bang",
+      "steps": [
+        {
+          "title": "Innovation hub",
+          "text": "Start in one innovation environment as the testing ground."
+        },
+        {
+          "title": "Employees",
+          "text": "Make competencies across the university easier to find and activate."
+        },
+        {
+          "title": "Students",
+          "text": "Connect students with projects, researchers and each other."
+        },
+        {
+          "title": "Science park",
+          "text": "Open up to companies in the surrounding ecosystem."
+        }
+      ]
+    },
+    "international": {
+      "title": "Across borders",
+      "text": "We're also building university partnerships in East Africa. GRTA can match projects and competencies there with students, researchers and disciplines in Scandinavia, and the other way round."
+    },
+    "terms": {
+      "title": "Simple terms",
+      "text": "Development partners don't pay license or implementation fees. Where a feature has a direct third-party cost, such as AI usage, it is covered by vouchers that match that cost and nothing more. For us, the value is in the partnership."
+    },
+    "challenges": {
+      "label": "Challenge Exchange",
+      "title": "Post a challenge. Find who can help.",
+      "lead": "Partners post a real challenge. GRTA tags the competencies and disciplines needed, and connects it with complementary challenges and people, across institutions and borders.",
+      "status": "Opening to partners in the pilot",
+      "cta": "Become a partner",
+      "examples": [
+        {
+          "org": "Engineering faculty",
+          "title": "Low-cost water quality sensors for rural schools",
+          "tags": [
+            "Electronics",
+            "Public health",
+            "Field research"
+          ]
+        },
+        {
+          "org": "Business school",
+          "title": "Financing models for solar mini-grids",
+          "tags": [
+            "Finance",
+            "Energy",
+            "Policy"
+          ]
+        },
+        {
+          "org": "Innovation hub",
+          "title": "AI to match student teams with company problems",
+          "tags": [
+            "Machine learning",
+            "Design",
+            "Ecosystems"
+          ]
+        }
+      ],
+      "match": "Possible link"
+    }
+  },
+  "about": {
+    "hero": {
+      "label": "About",
+      "title": "AI connects data. GRTA connects people.",
+      "lead": "We believe the best answers already exist inside your organisation. They're just spread across people who haven't met yet."
+    },
+    "equation": {
+      "title": "AI + BI + CI = DI",
+      "text": "Artificial Intelligence and Business Intelligence are only half the picture. Add the Collective Intelligence of your people and you get Decision Intelligence: better decisions, made faster, by the right people.",
+      "parts": [
+        {
+          "k": "AI",
+          "v": "Artificial Intelligence"
+        },
+        {
+          "k": "BI",
+          "v": "Business Intelligence"
+        },
+        {
+          "k": "CI",
+          "v": "Collective Intelligence"
+        },
+        {
+          "k": "DI",
+          "v": "Decision Intelligence"
+        }
+      ]
+    },
+    "story": {
+      "title": "Why GRTA exists",
+      "paragraphs": [
+        "Every organisation has a moment when something important lands on someone's desk and they ask: who here can help? Too often, the answer is a guess, a favour, or whoever happens to be free.",
+        "GRTA started as a way to find people and competencies. It has grown into a full model for understanding what people can really do, finding perspectives that complement each other, assembling teams, and turning Collective Intelligence into decisions and action.",
+        "We keep one rule: people before technology. The AI does the searching, structuring and remembering. People do the deciding."
+      ]
+    },
+    "principles": {
+      "title": "What we believe",
+      "items": [
+        {
+          "title": "The right people",
+          "text": "Not the most senior, not the most available. The ones who see the problem from the right angle."
+        },
+        {
+          "title": "The right perspectives",
+          "text": "Complementary beats similar. Friction, used well, makes better decisions."
+        },
+        {
+          "title": "At the right time",
+          "text": "Structured, time-boxed, action-oriented. Hours, not months."
+        }
+      ]
+    },
+    "together": {
+      "title": "Be GRTA together.",
+      "alt": "The six recurring characters walking side by side along a calm Nordic waterfront, loosely linked by threads of light."
+    },
+    "trust": {
+      "label": "Trust & GDPR",
+      "title": "How we handle your data",
+      "items": [
+        {
+          "icon": "lock",
+          "title": "Your organisation owns its data",
+          "text": "Profiles, projects and outcomes belong to you. You can export or delete them at any time."
+        },
+        {
+          "icon": "globe",
+          "title": "Hosted in the EU",
+          "text": "Data is stored and processed in the EU. Sub-processors are listed and bound by data processing agreements."
+        },
+        {
+          "icon": "spark",
+          "title": "No training on your data",
+          "text": "Your data is never used to train shared AI models. AI providers process requests without retaining them."
+        },
+        {
+          "icon": "scout",
+          "title": "Explainable by design",
+          "text": "Every match and suggestion shows the reasons behind it, so people can question it."
+        },
+        {
+          "icon": "customers",
+          "title": "People stay in control",
+          "text": "Employees see and edit their own profile, and choose what is visible to whom."
+        },
+        {
+          "icon": "risk-security",
+          "title": "Security basics, done properly",
+          "text": "Encryption in transit and at rest, single sign-on, role-based access and audit logs."
+        }
+      ]
+    }
+  },
+  "legal": {
+    "title": "Privacy & terms",
+    "updated": "Last updated: {date}",
+    "draft": "This is a working draft and will be reviewed by legal counsel before the platform launches.",
+    "privacyTitle": "Privacy notice",
+    "termsTitle": "Terms of use"
+  },
+  "notFound": {
+    "title": "We couldn't find that page.",
+    "text": "It may have moved when we rebuilt the site.",
+    "home": "Go to the home page"
+  }
+}

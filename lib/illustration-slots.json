@@ -1,0 +1,15 @@
+{
+  "home-hero": { "ratio": [43, 24], "placeholder": "placeholder-wide-16x10.svg", "width": 1920 },
+  "home-door-hr": { "ratio": [4, 5], "placeholder": "placeholder-portrait-4x5.svg", "width": 800 },
+  "home-door-project": { "ratio": [4, 5], "placeholder": "placeholder-portrait-4x5.svg", "width": 800 },
+  "home-flywheel": { "ratio": [1, 1], "placeholder": "placeholder-square-1x1.svg", "width": 1000 },
+  "how-brief": { "ratio": [43, 24], "placeholder": "placeholder-wide-16x10.svg", "width": 1600 },
+  "how-translate": { "ratio": [43, 24], "placeholder": "placeholder-wide-16x10.svg", "width": 1600 },
+  "how-variants": { "ratio": [43, 24], "placeholder": "placeholder-wide-16x10.svg", "width": 1600 },
+  "how-hiit": { "ratio": [33, 14], "placeholder": "placeholder-banner-3x1.svg", "width": 1800 },
+  "how-7x7": { "ratio": [1, 1], "placeholder": "placeholder-square-1x1.svg", "width": 1000 },
+  "lab-wildcard": { "ratio": [4, 5], "placeholder": "placeholder-portrait-4x5.svg", "width": 800 },
+  "partners-hero": { "ratio": [43, 24], "placeholder": "placeholder-wide-16x10.svg", "width": 1600 },
+  "about-together": { "ratio": [33, 14], "placeholder": "placeholder-banner-3x1.svg", "width": 1800 },
+  "empty-state": { "ratio": [1, 1], "placeholder": "placeholder-square-1x1.svg", "width": 600 }
+}

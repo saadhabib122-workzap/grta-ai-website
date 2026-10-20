@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" role="img" aria-label="PLACEHOLDER · 1:1">
+  <rect width="1000" height="1000" fill="#F6F1E8"/>
+  <ellipse cx="500" cy="860" rx="420" ry="70" fill="#E9DFCF"/>
+  <g transform="translate(200 540) scale(2.7777777777777777)">
+    <path d="M-34 90 C-34 40 -22 22 0 22 C22 22 34 40 34 90 Z" fill="#1F3D33"/>
+    <circle cx="0" cy="-4" r="20" fill="#C99B78"/>
+  </g><g transform="translate(500 600) scale(2.7777777777777777)">
+    <path d="M-34 90 C-34 40 -22 22 0 22 C22 22 34 40 34 90 Z" fill="#6F8C6A"/>
+    <circle cx="0" cy="-4" r="20" fill="#8A5E44"/>
+  </g><g transform="translate(800 540) scale(2.7777777777777777)">
+    <path d="M-34 90 C-34 40 -22 22 0 22 C22 22 34 40 34 90 Z" fill="#D8B79B"/>
+    <circle cx="0" cy="-4" r="20" fill="#E3C2A4"/>
+  </g>
+  <rect x="100" y="760" width="800" height="100" rx="20" fill="#B9946E"/>
+  <rect x="80" y="740" width="840" height="50" rx="25" fill="#C9A882"/>
+  <g fill="none" stroke="#9DBCCB" stroke-width="4.444444444444445" opacity="0.9"><path d="M200 528.8888888888889 Q350 320 500 588.8888888888889" /><path d="M200 528.8888888888889 Q500 320 800 528.8888888888889" /><path d="M500 588.8888888888889 Q650 380 800 528.8888888888889" /></g>
+  <circle cx="200" cy="528.8888888888889" r="9.722222222222221" fill="#9DBCCB"/><circle cx="500" cy="588.8888888888889" r="9.722222222222221" fill="#9DBCCB"/><circle cx="800" cy="528.8888888888889" r="9.722222222222221" fill="#9DBCCB"/>
+  <text x="970" y="965" text-anchor="end" font-family="Geist Mono, monospace" font-size="30.555555555555554" fill="#5E5E57" opacity="0.7">PLACEHOLDER · 1:1</text>
+</svg>

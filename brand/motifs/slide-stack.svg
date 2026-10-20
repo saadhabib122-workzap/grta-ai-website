@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 132 96" role="img" aria-label="20×20 slide stack">
+  <rect x="24" y="20" width="96" height="66" rx="6" fill="#F6F1E8" stroke="#15201B" stroke-width="2"/><rect x="18" y="14" width="96" height="66" rx="6" fill="#F6F1E8" stroke="#15201B" stroke-width="2"/><rect x="12" y="8" width="96" height="66" rx="6" fill="#FFFDF9" stroke="#15201B" stroke-width="2"/>
+  <text x="60" y="47" text-anchor="middle" font-family="Schibsted Grotesk, sans-serif" font-weight="700" font-size="18" fill="#15201B">20×20</text>
+  <rect x="24" y="58" width="72" height="3" rx="1.5" fill="#E8551E"/>
+</svg>

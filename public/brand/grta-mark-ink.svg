@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="GRTA">
+  <title>GRTA</title>
+  <defs><clipPath id="m-G"><rect x="14" y="14" width="34" height="34"/></clipPath><clipPath id="m-R"><rect x="52" y="14" width="34" height="34"/></clipPath><clipPath id="m-T"><rect x="14" y="52" width="34" height="34"/></clipPath><clipPath id="m-A"><rect x="52" y="52" width="34" height="34"/></clipPath></defs>
+  
+  <g fill="none" stroke="#15201B" stroke-width="8.5" stroke-linejoin="round" stroke-linecap="butt"><path clip-path="url(#m-G)" d="M43.75 12 V18.25 H27.25 Q18.25 18.25 18.25 27.25 V34.75 Q18.25 43.75 27.25 43.75 H43.75 V31 H33"/><path clip-path="url(#m-R)" d="M56.25 50 V18.25 H72.75 Q81.75 18.25 81.75 26.25 V25 Q81.75 33.5 72.75 33.5 H56.25 M72 33.5 L90 52"/><path clip-path="url(#m-T)" d="M12 56.25 H50 M31 56.25 V88"/><path clip-path="url(#m-A)" d="M56.25 88 V65.25 Q56.25 56.25 65.25 56.25 H72.75 Q81.75 56.25 81.75 65.25 V88 M56.25 73 H81.75"/></g>
+</svg>

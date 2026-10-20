@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GRTA.AI Overhaul Plan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@500;600;700;800&family=Inter:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --birch: #F6F1E8;
+    --snow: #FFFDF9;
+    --ink: #15201B;
+    --forest: #1F3D33;
+    --moss: #6F8C6A;
+    --ember: #E8551E;
+    --fjord: #9DBCCB;
+    --clay: #D8B79B;
+    --stone: #5E5E57;
+    --line: #E4DCCD;
+  }
+  @page { size: A4; margin: 18mm 16mm 20mm; }
+  @page :first { margin: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body {
+    font-family: 'Inter', sans-serif;
+    font-size: 10pt;
+    line-height: 1.55;
+    color: var(--ink);
+    background: #FFFFFF;
+  }
+  h1, h2, h3, h4 { font-family: 'Schibsted Grotesk', sans-serif; line-height: 1.15; color: var(--ink); }
+  h2 { font-size: 22pt; font-weight: 700; letter-spacing: -0.01em; margin-bottom: 4mm; }
+  h3 { font-size: 13pt; font-weight: 700; margin: 6mm 0 2.5mm; color: var(--forest); }
+  h4 { font-size: 10.5pt; font-weight: 700; margin: 4mm 0 1.5mm; }
+  p { margin-bottom: 2.5mm; }
+  ul, ol { margin: 0 0 3mm 5mm; }
+  li { margin-bottom: 1.2mm; padding-left: 1mm; }
+  strong { font-weight: 600; }
+  code, .mono {
+    font-family: 'Geist Mono', monospace;
+    font-size: 8.5pt;
+  }
+  code { background: var(--birch); padding: 0.3mm 1.2mm; border-radius: 1mm; }
+  .label {
+    font-family: 'Geist Mono', monospace;
+    font-size: 7.5pt;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--moss);
+    display: block;
+    margin-bottom: 2mm;
+  }
+
+  /* ── Cover ─────────────────────────────── */
+  .cover {
+    width: 210mm;
+    height: 297mm;
+    background: var(--birch);
+    position: relative;
+    overflow: hidden;
+    padding: 22mm 20mm;
+    display: flex;
+    flex-direction: column;
+    page-break-after: always;
+  }
+  .cover svg.threads { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .cover .top { position: relative; display: flex; align-items: center; gap: 5mm; }
+  .cover .top .wordmark { font-family: 'Schibsted Grotesk', sans-serif; font-weight: 700; font-size: 15pt; }
+  .cover .main { position: relative; margin-top: auto; }
+  .cover h1 { font-size: 46pt; font-weight: 800; letter-spacing: -0.025em; line-height: 1.02; margin-bottom: 7mm; }
+  .cover h1 span { color: var(--forest); }
+  .cover .sub { font-size: 13pt; color: var(--stone); max-width: 140mm; margin-bottom: 14mm; }
+  .cover .meta { display: flex; gap: 12mm; border-top: 1px solid var(--line); padding-top: 5mm; }
+  .cover .meta div { font-size: 9pt; }
+  .cover .meta .label { margin-bottom: 1mm; }
+
+  /* ── Sections ──────────────────────────── */
+  section { margin-top: 12mm; }
+  section.newpage { break-before: page; margin-top: 0; }
+  .phase-head, h3, h4 { break-after: avoid; }
+  .keep { break-inside: avoid; }
+  .phase-head {
+    display: flex; align-items: baseline; gap: 4mm;
+    border-bottom: 2px solid var(--ink);
+    padding-bottom: 3mm; margin-bottom: 5mm;
+  }
+  .phase-head .num {
+    font-family: 'Geist Mono', monospace; font-size: 9pt; color: var(--snow);
+    background: var(--forest); border-radius: 1.2mm; padding: 0.8mm 2.2mm;
+  }
+  .phase-head h2 { margin: 0; }
+  .phase-head .gate {
+    margin-left: auto; font-family: 'Geist Mono', monospace; font-size: 7.5pt;
+    letter-spacing: 0.1em; text-transform: uppercase; color: var(--ember);
+    border: 1px solid var(--ember); border-radius: 10mm; padding: 0.8mm 3mm;
+    white-space: nowrap;
+  }
+  .lede { font-size: 11.5pt; color: var(--stone); margin-bottom: 5mm; }
+
+  .callout {
+    background: var(--birch);
+    border-left: 3px solid var(--forest);
+    padding: 3.5mm 5mm;
+    margin: 4mm 0;
+    border-radius: 0 2mm 2mm 0;
+    break-inside: avoid;
+  }
+  .callout.warn { border-left-color: var(--ember); }
+  .callout p:last-child { margin-bottom: 0; }
+
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 5mm; }
+  .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4mm; }
+  .card {
+    background: var(--snow); border: 1px solid var(--line); border-radius: 2.5mm;
+    padding: 4mm; break-inside: avoid;
+  }
+  .card h4 { margin-top: 0; }
+  .card p { font-size: 9pt; margin-bottom: 0; color: #3a3f3c; }
+
+  table { width: 100%; border-collapse: collapse; margin: 3mm 0 5mm; font-size: 9pt; }
+  thead { display: table-header-group; }
+  tr { break-inside: avoid; }
+  th {
+    text-align: left; font-family: 'Geist Mono', monospace; font-weight: 500; font-size: 7.5pt;
+    letter-spacing: 0.08em; text-transform: uppercase; color: var(--moss);
+    border-bottom: 1.5px solid var(--ink); padding: 2mm 2.5mm;
+  }
+  td { border-bottom: 1px solid var(--line); padding: 1.7mm 2.5mm; vertical-align: top; }
+  td strong { color: var(--forest); }
+
+  .swatches { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3mm; margin: 3mm 0 5mm; }
+  .swatch { border: 1px solid var(--line); border-radius: 2.5mm; overflow: hidden; break-inside: avoid; }
+  .swatch .chip { height: 14mm; }
+  .swatch .info { padding: 2mm 3mm; font-size: 8.5pt; line-height: 1.35; }
+  .swatch .info b { font-family: 'Schibsted Grotesk', sans-serif; font-size: 10pt; display: block; }
+  .swatch .info .mono { color: var(--stone); }
+
+  .type-row { display: grid; grid-template-columns: 34mm 1fr; gap: 5mm; padding: 3mm 0; border-bottom: 1px solid var(--line); align-items: center; break-inside: avoid; }
+  .type-row .spec { font-size: 8.5pt; color: var(--stone); }
+
+  pre {
+    font-family: 'Geist Mono', monospace; font-size: 8pt; line-height: 1.5;
+    background: var(--ink); color: #E9E4DA; border-radius: 2.5mm;
+    padding: 4mm 5mm; margin: 3mm 0 5mm; white-space: pre-wrap; break-inside: avoid;
+  }
+  pre .c { color: var(--fjord); }
+  pre .e { color: #F08A5D; }
+
+  .feature { display: grid; grid-template-columns: 9mm 1fr; gap: 3mm; padding: 3.5mm 0; border-bottom: 1px solid var(--line); break-inside: avoid; }
+  .feature .n {
+    font-family: 'Geist Mono', monospace; font-size: 9pt; color: var(--snow); background: var(--ember);
+    width: 7mm; height: 7mm; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  }
+  .feature h4 { margin: 0 0 1mm; font-size: 11pt; }
+  .feature h4 .where { font-family: 'Geist Mono', monospace; font-size: 7.5pt; font-weight: 400; color: var(--moss); margin-left: 2mm; }
+  .feature p { font-size: 9pt; margin-bottom: 1mm; }
+  .feature .why { font-size: 8.5pt; color: var(--forest); }
+  .feature .why b { font-family: 'Geist Mono', monospace; font-size: 7pt; letter-spacing: 0.1em; text-transform: uppercase; margin-right: 1.5mm; color: var(--moss); }
+
+  .timeline { display: grid; grid-template-columns: repeat(8, 1fr); gap: 1.5mm; margin: 4mm 0 6mm; }
+  .timeline div {
+    background: var(--birch); border-radius: 2mm; padding: 2.5mm 2mm; font-size: 7.5pt; line-height: 1.3;
+    border-top: 3px solid var(--forest);
+  }
+  .timeline div.g { border-top-color: var(--ember); }
+  .timeline div b { display: block; font-family: 'Geist Mono', monospace; font-size: 7pt; color: var(--moss); margin-bottom: 1mm; }
+
+  .toc { list-style: none; margin: 0; columns: 2; column-gap: 10mm; }
+  .toc li { display: flex; gap: 3mm; padding: 2mm 0; border-bottom: 1px solid var(--line); break-inside: avoid; }
+  .toc li .mono { color: var(--moss); width: 8mm; }
+
+  .footer-note { margin-top: 8mm; font-size: 8pt; color: var(--stone); }
+</style>
+</head>
+<body>
+
+<!-- ═══════════ COVER ═══════════ -->
+<div class="cover">
+  <svg class="threads" viewBox="0 0 210 297" preserveAspectRatio="none" aria-hidden="true">
+    <g stroke="#9DBCCB" stroke-width="0.35" fill="none" opacity="0.9">
+      <path d="M150 40 L182 72 L160 112 L196 140" />
+      <path d="M182 72 L120 90 L160 112" />
+      <path d="M120 90 L138 150 L196 140" />
+      <path d="M138 150 L176 182" />
+    </g>
+    <g fill="#9DBCCB">
+      <circle cx="150" cy="40" r="1.4"/><circle cx="182" cy="72" r="2"/><circle cx="160" cy="112" r="1.6"/>
+      <circle cx="196" cy="140" r="1.2"/><circle cx="120" cy="90" r="1.3"/><circle cx="138" cy="150" r="2.2"/>
+    </g>
+    <circle cx="176" cy="182" r="2.6" fill="#E8551E"/>
+  </svg>
+
+  <div class="top">
+    <!-- GR/TA block mark, first draft redraw -->
+    <svg width="58" height="58" viewBox="0 0 100 100" aria-label="GRTA mark">
+      <rect width="100" height="100" rx="8" fill="#15201B"/>
+      <g font-family="Schibsted Grotesk, sans-serif" font-weight="800" font-size="46" fill="#E8551E" text-anchor="middle">
+        <text x="28" y="46">G</text><text x="72" y="46">R</text>
+        <text x="28" y="92">T</text><text x="72" y="92">A</text>
+      </g>
+    </svg>
+    <span class="wordmark">grta.ai</span>
+  </div>
+
+  <div class="main">
+    <span class="label">Website overhaul · Plan v1</span>
+    <h1>People move<br><span>work forward.</span></h1>
+    <p class="sub">The plan for GRTA.AI's new brand, sitemap, website and backend. From a single landing page to a living proof of Collective Intelligence.</p>
+    <div class="meta">
+      <div><span class="label">Date</span>20 October 2026</div>
+      <div><span class="label">Stack</span>Next.js · Supabase · Claude API</div>
+      <div><span class="label">Languages</span>English first, Danish ready</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ CONTENTS + CONTEXT ═══════════ -->
+<section style="margin-top:0;">
+  <span class="label">Contents</span>
+  <ul class="toc">
+    <li><span class="mono">01</span>Context: what GRTA is now</li>
+    <li><span class="mono">02</span>Principles &amp; working rules</li>
+    <li><span class="mono">03</span>Phase 0: Plan document</li>
+    <li><span class="mono">04</span>Phase 1: Brand assets</li>
+    <li><span class="mono">05</span>Phase 2: Sitemap &amp; content</li>
+    <li><span class="mono">06</span>Phase 3: Website foundation</li>
+    <li><span class="mono">07</span>Phase 4: Signature features</li>
+    <li><span class="mono">08</span>Phase 5: Backend</li>
+    <li><span class="mono">09</span>Phases 6–7: Build &amp; launch</li>
+    <li><span class="mono">10</span>Review protocol, costs, inputs needed</li>
+  </ul>
+
+  <div class="phase-head" style="margin-top: 10mm;">
+    <span class="num">01</span><h2>Context</h2>
+  </div>
+  <p class="lede">The current site is a single dark landing page that says “assemble expert teams in hours.” GRTA has grown into far more than that, and the site needs to show it.</p>
+
+  <h3>What GRTA is today</h3>
+  <div class="grid2">
+    <div class="card">
+      <h4>Philosophy</h4>
+      <p><strong>AI + BI + CI = DI.</strong> Artificial, Business and Collective Intelligence add up to Decision Intelligence. “Be GRTA Together.” People come before technology.</p>
+    </div>
+    <div class="card">
+      <h4>Product</h4>
+      <p>A decision acceleration engine for team builders: understand real competencies, find complementary people, assemble the right team around a problem, and learn from every outcome.</p>
+    </div>
+    <div class="card">
+      <h4>Method: HIIT Engine 9 → 3 → 1</h4>
+      <p>Problem → 9 complementary competencies → 3 parallel HIIT meetings with 20×20 presentations → 1 execution plan. From emergency to execution plan in 3 hours.</p>
+    </div>
+    <div class="card">
+      <h4>Adoption</h4>
+      <p>Organisation Cookbook (10 steps), Profile Recipe (the signals AI needs about a person) and the 7×7 Network (one guide helps six, and that guide sits in another group of seven).</p>
+    </div>
+  </div>
+
+  <h3>The product roadmap the site must tell</h3>
+  <table>
+    <thead><tr><th>Sprint</th><th>Capability</th><th>What it means for a team builder</th></tr></thead>
+    <tbody>
+      <tr><td class="mono">1</td><td><strong>Zero blank page</strong> + availability</td><td>Write a messy paragraph, get a structured brief. Busy people are excluded or clearly flagged.</td></tr>
+      <tr><td class="mono">2</td><td><strong>Gap detection</strong> + coverage map</td><td>The AI spots missing expertise before matching. A colour-coded map shows team strength at a glance.</td></tr>
+      <tr><td class="mono">3</td><td><strong>Plain-language skill translation</strong></td><td>“I turn complexity into clarity” becomes matchable competencies, backed by past work. The linchpin.</td></tr>
+      <tr><td class="mono">4</td><td><strong>Explainable matching</strong>, team variants, wildcards</td><td>Execution, Challenger or Innovation teams, plus an unexpected candidate with evidence for why.</td></tr>
+      <tr><td class="mono">5</td><td><strong>Data flywheel</strong></td><td>A two-minute outcome pulse after each project improves every future match.</td></tr>
+      <tr><td class="mono">6</td><td><strong>Proactive scout</strong></td><td>Skills surplus, skills gap alerts against strategy, and cross-silo opportunity spotting.</td></tr>
+    </tbody>
+  </table>
+  <div class="callout">
+    <p><strong>The moat is the data, not the algorithm.</strong> Competitors can copy an interface. They cannot copy years of an organisation's outcome history. The site should make that clear.</p>
+  </div>
+
+  <h3>Who the site is for</h3>
+  <div class="grid3">
+    <div class="card"><h4>HR &amp; People teams</h4><p>Want to find, activate and keep hidden competencies inside the organisation.</p></div>
+    <div class="card"><h4>Project &amp; team builders</h4><p>Need the right people around a specific problem, fast, without politics or guesswork.</p></div>
+    <div class="card"><h4>Universities &amp; partners</h4><p>DTU Skylab as a development partner, universities in Uganda, DTU Science Park.</p></div>
+  </div>
+</section>
+
+<!-- ═══════════ PRINCIPLES ═══════════ -->
+<section>
+  <div class="phase-head"><span class="num">02</span><h2>Principles &amp; working rules</h2></div>
+  <div class="grid3">
+    <div class="card"><h4>People before technology</h4><p>AI is part of the solution but never dominates the visual story. People and relationships lead.</p></div>
+    <div class="card"><h4>Clear entry points</h4><p>HR and project teams each find their own challenges and use cases within seconds. Partners get their own track.</p></div>
+    <div class="card"><h4>Nordic simplicity</h4><p>Generous white space, short messages, a limited palette, and a calm, trustworthy experience.</p></div>
+  </div>
+  <h3>How we work, so little needs redoing</h3>
+  <ul>
+    <li><strong>Approval gates.</strong> Brand, then sitemap and copy, are approved before any page is built.</li>
+    <li><strong>Design system first.</strong> Pages are composed only from approved components, so a change happens in one place.</li>
+    <li><strong>Single sources of truth.</strong> Colours and type live in <code>brand/tokens.json</code>; all copy lives in <code>messages/en.json</code>.</li>
+    <li><strong>Drop-in illustrations.</strong> Every illustration slot has a fixed ratio and filename, so final art replaces placeholders without layout changes.</li>
+    <li><strong>Self-review after every edit.</strong> Typecheck, lint, screenshots on desktop and mobile, copy check. Fix before moving on.</li>
+  </ul>
+
+  <div class="keep">
+  <h3>Timeline at a glance</h3>
+  <div class="timeline">
+    <div><b>P0</b>Plan document</div>
+    <div class="g"><b>P1</b>Brand assets · gate</div>
+    <div class="g"><b>P2</b>Sitemap &amp; copy · gate</div>
+    <div><b>P3</b>Foundation &amp; design system</div>
+    <div><b>P4</b>Signature features</div>
+    <div><b>P5</b>Backend</div>
+    <div><b>P6</b>Pages</div>
+    <div><b>P7</b>SEO &amp; launch</div>
+  </div>
+  </div>
+  <p class="footer-note">Phases 4 and 5 run together in practice: each Lab feature is built with its backend slice.</p>
+</section>
+
+<!-- ═══════════ PHASE 0 ═══════════ -->
+<section>
+  <div class="phase-head"><span class="num">03</span><h2>Phase 0: Plan document</h2></div>
+  <ul>
+    <li>This document, written as HTML (<code>docs/plan/grta-overhaul-plan.html</code>) and rendered to PDF with the Puppeteer setup already in the repo (<code>tools/render_pdf.js</code>).</li>
+    <li>The current site is tagged <code>v1-static</code> in git, so it can always be restored.</li>
+  </ul>
+</section>
+
+<!-- ═══════════ PHASE 1: BRAND ═══════════ -->
+<section class="newpage">
+  <div class="phase-head"><span class="num">04</span><h2>Phase 1: Brand assets</h2><span class="gate">Approval gate</span></div>
+  <p class="lede"><strong>“Nordic Futurism.”</strong> Warm people, luminous threads. The old navy and orange style is retired; only the GR/TA block mark carries over.</p>
+
+  <div class="callout">
+    <p><strong>Concept.</strong> People and relationships stay at the centre: warm, tactile, calm. Futurism appears only as <em>connection</em>: thin luminous threads, constellation nodes and soft holographic overlays linking people. These are how we draw Collective Intelligence. AI never takes the foreground.</p>
+    <p><strong>Attributes:</strong> Human · Connected · Calm · Clear · Quietly ahead.</p>
+  </div>
+
+  <h3>Logo system: the GR/TA block mark, redrawn</h3>
+  <ul>
+    <li>A vector redraw of the 2×2 stacked “GR / TA” block: geometric slab letters on an even grid, with corners tuned for small sizes.</li>
+    <li>Variants: primary (Ember letters on Ink), reversed (Ink on Birch), mono Forest, mono white, and a horizontal lockup (mark + “grta.ai”).</li>
+    <li><strong>Living mark:</strong> a motion version where a luminous thread traces between the four letters, used for the loader and hero intro. Static everywhere else.</li>
+    <li>Deliverables: SVG masters, PNG exports from 16 to 1024 px, favicon, Apple touch icon, default social image, clear-space and minimum-size rules.</li>
+  </ul>
+
+  <h3>Colour palette</h3>
+  <div class="swatches">
+    <div class="swatch"><div class="chip" style="background:#F6F1E8"></div><div class="info"><b>Birch</b><span class="mono">#F6F1E8</span><br>Page background, warm paper</div></div>
+    <div class="swatch"><div class="chip" style="background:#FFFDF9"></div><div class="info"><b>Snow</b><span class="mono">#FFFDF9</span><br>Cards and raised surfaces</div></div>
+    <div class="swatch"><div class="chip" style="background:#15201B"></div><div class="info"><b>Ink</b><span class="mono">#15201B</span><br>Primary text, logo block</div></div>
+    <div class="swatch"><div class="chip" style="background:#1F3D33"></div><div class="info"><b>Forest</b><span class="mono">#1F3D33</span><br>Primary brand, buttons, dark sections</div></div>
+    <div class="swatch"><div class="chip" style="background:#6F8C6A"></div><div class="info"><b>Moss</b><span class="mono">#6F8C6A</span><br>Secondary, icons, tags</div></div>
+    <div class="swatch"><div class="chip" style="background:#E8551E"></div><div class="info"><b>Ember</b><span class="mono">#E8551E</span><br>Logo letters, rare accent (max 5%)</div></div>
+    <div class="swatch"><div class="chip" style="background:#9DBCCB"></div><div class="info"><b>Fjord</b><span class="mono">#9DBCCB</span><br>Luminous threads, data viz</div></div>
+    <div class="swatch"><div class="chip" style="background:#D8B79B"></div><div class="info"><b>Clay</b><span class="mono">#D8B79B</span><br>Illustration warmth, highlights</div></div>
+    <div class="swatch"><div class="chip" style="background:#5E5E57"></div><div class="info"><b>Stone</b><span class="mono">#5E5E57</span><br>Secondary text (AA on Birch)</div></div>
+  </div>
+  <p>A dark mode, <strong>“Nordic night”</strong> (Ink background, Fjord threads), is defined in the tokens from day one. Every text and background pair is checked against WCAG AA by script.</p>
+
+  <h3>Typography (free Google Fonts)</h3>
+  <div class="type-row">
+    <div style="font-family:'Schibsted Grotesk'; font-weight:800; font-size:22pt; letter-spacing:-0.02em;">Aa</div>
+    <div><strong>Schibsted Grotesk</strong>, display. <span class="spec">Made for a Norwegian newspaper group: Nordic, editorial, confident. H1 to H3.</span></div>
+  </div>
+  <div class="type-row">
+    <div style="font-family:'Inter'; font-size:22pt;">Aa</div>
+    <div><strong>Inter</strong>, body. <span class="spec">Familiar and highly legible for longer text.</span></div>
+  </div>
+  <div class="type-row">
+    <div style="font-family:'Geist Mono'; font-size:18pt;">0.92</div>
+    <div><strong>Geist Mono</strong>, data and labels. <span class="spec">Scores, coverage values, small uppercase labels. The quiet “machine” voice, used sparingly.</span></div>
+  </div>
+
+  <h3>Illustration system: “Polished clay”</h3>
+  <ul>
+    <li><strong>Style:</strong> soft 3D characters with matte materials in Scandinavian interiors (birch wood, linen, plants, daylight). Calm, mature expressions, never cartoon grins.</li>
+    <li><strong>Futurist layer:</strong> fine fjord-blue light threads connecting people; small holographic coverage maps floating above tables.</li>
+    <li><strong>Recurring cast:</strong> six named characters across ages, backgrounds and roles: HR lead, project lead, data scientist, operations analyst (“the wildcard”), student, and a 7×7 guide. They appear throughout, so the site reads as one story.</li>
+    <li><strong>Illustration bible</strong> (<code>brand/illustration-bible.md</code>): style rules, master prompt, about 14 scene prompts mapped to the sitemap, lighting and palette locks, do and don't examples.</li>
+  </ul>
+  <div class="callout warn">
+    <p><strong>Limitation.</strong> Raster illustrations can't be generated in this environment. They are produced from the bible (Midjourney, Adobe Firefly or a designer). Until then, slots show on-brand SVG placeholders: silhouettes joined by threads. Swapping in final art changes no layout.</p>
+  </div>
+
+  <h3>Other brand assets</h3>
+  <ul>
+    <li><strong>Icon set:</strong> about 30 line icons (1.5 px stroke, rounded) for the 9 competencies, the roadmap capabilities and the UI. SVG sprite and React components.</li>
+    <li><strong>Motifs:</strong> thread and constellation pattern; coverage-map language (strong, adequate, gap as Moss, Fjord, Ember dots); the 20×20 slide-stack.</li>
+    <li><strong>Voice and tone guide:</strong> plain language, short sentences, no em dashes. Claim: “People move work forward.”</li>
+    <li><strong>Brand guidelines</strong> page and PDF, plus <code>brand/tokens.json</code> as the single source for the site.</li>
+  </ul>
+</section>
+
+<!-- ═══════════ PHASE 2: SITEMAP ═══════════ -->
+<section>
+  <div class="phase-head"><span class="num">05</span><h2>Phase 2: Sitemap &amp; content</h2><span class="gate">Approval gate</span></div>
+  <p class="lede">Six public pages. Everything else lives as a section, a tab or a modal, so the site stays small and every page earns its place.</p>
+  <pre><span class="c">/</span>               Home: “People move work forward”
+                  <span class="c">·</span> Pick your door: HR / Project teams switch
+                  <span class="c">·</span> live Zero Blank Page demo · contact section
+<span class="c">/how-it-works</span>   One page, three chapters
+                  <span class="c">·</span> The journey: brief → translate → match → pulse → scout
+                  <span class="c">·</span> The method: HIIT Engine 9 → 3 → 1
+                  <span class="c">·</span> Rolling it out: Cookbook, Profile Recipe, 7×7 Network
+<span class="c">/lab</span>            All demos on one page, as tabs
+                  <span class="c">#brief  #translate  #team  #hiit  #network</span>
+<span class="c">/partners</span>       Universities &amp; research + Challenge Exchange
+<span class="c">/about</span>          AI + BI + CI = DI, founders, Trust &amp; GDPR
+<span class="c">/legal</span>          Privacy and terms, two anchored sections
+<span class="e">/admin</span>          Private: leads, moderation, demo analytics</pre>
+  <h3>What was merged, and where it went</h3>
+  <table>
+    <thead><tr><th>Before</th><th>Now</th></tr></thead>
+    <tbody>
+      <tr><td>/for-hr, /for-project-teams</td><td><strong>Home</strong> “Pick your door” switch: one click swaps the copy, examples and demo prompt for HR or project teams. Two entry points, zero extra pages.</td></tr>
+      <tr><td>/method, /adopt, /adopt/7x7-network</td><td><strong>How it works</strong>, chapters 2 and 3, with a sticky chapter index.</td></tr>
+      <tr><td>Five /lab/* pages</td><td><strong>Lab</strong> tabs with shareable anchors, e.g. <code>/lab#translate</code>.</td></tr>
+      <tr><td>/partners/challenges</td><td>A section on <strong>Partners</strong>.</td></tr>
+      <tr><td>/trust</td><td>A section on <strong>About</strong>, plus a trust row on Home.</td></tr>
+      <tr><td>/book-a-demo</td><td>A <strong>modal</strong> opened from any page, plus the contact section on Home.</td></tr>
+      <tr><td>/privacy, /terms</td><td>One <strong>Legal</strong> page.</td></tr>
+    </tbody>
+  </table>
+  <p><strong>Navigation:</strong> How it works · Lab · Partners · About. Buttons: <em>Book a demo</em> (opens the modal) and <em>Log in</em> (a waitlist until the product login exists).</p>
+
+  <div class="keep">
+  <h3>Page blueprints</h3>
+  <p>Each page gets a content file (<code>docs/content/&lt;page&gt;.md</code>) with section order, copy, illustration slot and calls to action. The home page, for example:</p>
+  <table>
+    <thead><tr><th style="width:8mm">#</th><th style="width:42mm">Section</th><th>Purpose</th></tr></thead>
+    <tbody>
+      <tr><td class="mono">1</td><td><strong>Hero</strong></td><td>“People move work forward.” Two calls to action; the cast around a table, joined by threads.</td></tr>
+      <tr><td class="mono">2</td><td><strong>Four value tiles</strong></td><td>Connect the right people · Better collaboration · From insight to action · Built for people and AI.</td></tr>
+      <tr><td class="mono">3</td><td><strong>Pick your door</strong></td><td>HR / Project teams switch. Swaps the challenges, use cases and demo prompt below it.</td></tr>
+      <tr><td class="mono">4</td><td><strong>Live mini-demo</strong></td><td>Zero Blank Page, preloaded with an example for the chosen door.</td></tr>
+      <tr><td class="mono">5</td><td><strong>9 → 3 → 1 band</strong></td><td>The HIIT Engine in one visual line.</td></tr>
+      <tr><td class="mono">6</td><td><strong>How it learns</strong></td><td>The data flywheel, in plain language.</td></tr>
+      <tr><td class="mono">7</td><td><strong>Partners strip</strong></td><td>DTU Skylab and others, once approved for public use.</td></tr>
+      <tr><td class="mono">8</td><td><strong>Trust row</strong></td><td>GDPR, your data stays yours, explainable AI.</td></tr>
+      <tr><td class="mono">9</td><td><strong>Contact</strong></td><td>Short demo / partner request form; the same form powers the modal.</td></tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+
+<!-- ═══════════ PHASE 3: FOUNDATION ═══════════ -->
+<section>
+  <div class="phase-head"><span class="num">06</span><h2>Phase 3: Website foundation</h2></div>
+  <h3>Stack</h3>
+  <ul>
+    <li><strong>Next.js</strong>, latest stable (App Router, TypeScript), <strong>Tailwind CSS v4</strong> fed by the brand tokens, <strong>next-intl</strong> (<code>/en</code> live, <code>/da</code> scaffolded), <strong>Motion</strong> for animation (respects reduced motion), <strong>MDX</strong> for resources.</li>
+    <li><strong>Hosting:</strong> Vercel Hobby (free) while building, then Vercel Pro or Cloudflare Pages at commercial launch. <strong>Supabase Free</strong> while building, Pro only at public launch.</li>
+  </ul>
+  <h3>Repository layout</h3>
+  <pre>app/[locale]/(marketing)/...   <span class="c">pages</span>
+app/api/...                    <span class="c">AI and form endpoints</span>
+app/admin/...                  <span class="c">protected admin</span>
+components/ui/                 <span class="c">Button, Card, Tag, Section, Nav, Footer, Form</span>
+components/brand/              <span class="c">Logo, LivingMark, Thread, CoverageMap, ...</span>
+components/lab/                <span class="c">one component per demo tab</span>
+lib/ai/  lib/supabase/         <span class="c">Claude client, prompts, schemas; database helpers</span>
+content/  messages/            <span class="c">MDX resources; en.json, da.json</span>
+supabase/migrations/           <span class="c">database schema</span>
+brand/  tools/  legacy/        <span class="c">brand assets; review tools; the old site</span></pre>
+  <h3>Design system first</h3>
+  <p>A <code>/styleguide</code> route shows every component before any page exists. Pages are then assembled only from approved parts.</p>
+</section>
+
+<!-- ═══════════ PHASE 4: FEATURES ═══════════ -->
+<section class="newpage">
+  <div class="phase-head"><span class="num">07</span><h2>Phase 4: Signature features</h2></div>
+  <p class="lede">The site doesn't just describe GRTA; it lets visitors <em>use</em> slices of it. Each feature shows one capability of the real product.</p>
+  <div class="callout">
+    <p><strong>Nordlys Group.</strong> All demos run against a fictional organisation of about 80 synthetic people, with profiles, past projects, availability and outcome history. No real personal data is needed, which keeps every demo GDPR-safe.</p>
+  </div>
+
+  <div class="feature"><div class="n">1</div><div>
+    <h4>Zero Blank Page <span class="where">/lab#brief · also on Home</span></h4>
+    <p>Type a messy paragraph about a problem. Watch it turn into a structured brief (roles, competencies, timeline) in real time. Then GRTA taps you on the shoulder: “Projects like this usually need change management. You asked for none.”</p>
+    <p class="why"><b>Why new</b>The AI critiques your thinking, not just your formatting.</p>
+  </div></div>
+
+  <div class="feature"><div class="n">2</div><div>
+    <h4>Buzzword Translator <span class="where">/lab#translate</span></h4>
+    <p>Paste your own corporate self-description (“I turn complexity into clarity”). Get matchable competencies, each with the reasoning, plus a shareable “Translated” card for LinkedIn.</p>
+    <p class="why"><b>Why new</b>Turns the product's linchpin into something people want to share.</p>
+  </div></div>
+
+  <div class="feature"><div class="n">3</div><div>
+    <h4>Team Variants &amp; the Wildcard <span class="where">/lab#team</span></h4>
+    <p>Pick a brief, then flip between Execution, Challenger and Innovation teams from Nordlys. A live coverage map shows strengths and gaps. A Wildcard card argues “I know this looks odd, but hear me out” with evidence. Unavailable people appear greyed out, with the reason.</p>
+    <p class="why"><b>Why new</b>Explainable matching you can feel: choices, not a black box.</p>
+  </div></div>
+
+  <div class="feature"><div class="n">4</div><div>
+    <h4>9 → 3 → 1 Simulator <span class="where">/lab#hiit</span></h4>
+    <p>Enter a problem. GRTA picks 9 competency lenses, splits them into 3 parallel rooms (an animated constellation), each room returns a short perspective, and they converge into 1 draft execution plan with owners, deadlines and KPIs. Downloadable as a PDF.</p>
+    <p class="why"><b>Why new</b>The HIIT Engine, compressed into sixty seconds.</p>
+  </div></div>
+
+  <div class="feature"><div class="n">5</div><div>
+    <h4>7×7 Network Grower <span class="where">/lab#network</span></h4>
+    <p>Enter your organisation's size. A constellation grows from one guide to the whole organisation, showing how many guides and layers you need and how long rollout takes.</p>
+    <p class="why"><b>Why new</b>Makes the human adoption model tangible for HR buyers.</p>
+  </div></div>
+
+  <div class="feature"><div class="n">6</div><div>
+    <h4>Living Constellation <span class="where">Home hero background</span></h4>
+    <p>Each anonymised, moderated problem from the Lab adds a glowing node to a shared constellation, linked by the competencies it needed. Visitors see what others are working on.</p>
+    <p class="why"><b>Why new</b>Collective Intelligence as a live, shared artwork.</p>
+  </div></div>
+
+  <div class="feature"><div class="n">7</div><div>
+    <h4>Challenge Exchange <span class="where">/partners · section</span></h4>
+    <p>Universities and partners (DTU, Uganda) post a challenge. GRTA tags the competencies and disciplines needed and surfaces complementary challenges and partners across borders. Partners sign in by magic link.</p>
+    <p class="why"><b>Why new</b>A first live slice of the cross-silo scout, built for the DTU conversation.</p>
+  </div></div>
+
+  <div class="feature"><div class="n">8</div><div>
+    <h4>Two-Minute Pulse <span class="where">end of every demo</span></h4>
+    <p>Five questions about the demo itself, with a visible timer that stays under two minutes.</p>
+    <p class="why"><b>Why new</b>Demonstrates the data flywheel while collecting real feedback.</p>
+  </div></div>
+
+  <p style="margin-top:4mm;"><strong>Launch order:</strong> 1, 3, 2, 4 at launch; 5, 6, 7, 8 shortly after. Every feature has a static fallback when the AI is unavailable or rate-limited.</p>
+</section>
+
+<!-- ═══════════ PHASE 5: BACKEND ═══════════ -->
+<section>
+  <div class="phase-head"><span class="num">08</span><h2>Phase 5: Backend</h2></div>
+  <p class="lede">Supabase (Postgres, auth, storage, pgvector) with Next.js route handlers and the Claude API.</p>
+
+  <h3>Data model</h3>
+  <table>
+    <thead><tr><th>Table</th><th>Holds</th></tr></thead>
+    <tbody>
+      <tr><td class="mono">leads</td><td>Demo and partner requests (HR, project, partner, investor), consent flag, source page.</td></tr>
+      <tr><td class="mono">synthetic_people · synthetic_projects · availability · outcomes</td><td>The Nordlys Group dataset, seeded from a JSON file.</td></tr>
+      <tr><td class="mono">competencies</td><td>Taxonomy based on the 9 HIIT competencies and sub-competencies, with vector embeddings.</td></tr>
+      <tr><td class="mono">lab_sessions</td><td>Anonymised demo inputs and outputs (opt-in), for the constellation and analytics.</td></tr>
+      <tr><td class="mono">constellation_nodes</td><td>Moderated public nodes: pending, approved or hidden.</td></tr>
+      <tr><td class="mono">challenges · partner_orgs · challenge_matches</td><td>The Challenge Exchange.</td></tr>
+      <tr><td class="mono">pulses · rate_limits</td><td>Two-minute ratings; per-visitor usage counters.</td></tr>
+    </tbody>
+  </table>
+  <p>Row-level security on every table: the public can only insert where intended; private tables are readable by admins only.</p>
+
+  <h3>AI layer</h3>
+  <ul>
+    <li><strong>Claude Sonnet 5.5</strong> for briefs, translation, team rationale and HIIT synthesis; <strong>Claude Haiku 5.5</strong> for tagging, moderation and cheap classification.</li>
+    <li>Every AI output follows a strict schema, so the interface never guesses at free text. Responses stream so demos feel alive.</li>
+    <li><strong>Matching is deterministic:</strong> vector similarity on competencies, an availability filter, and a diversity term for Challenger and Innovation teams. The AI only <em>explains</em> the result. That keeps it consistent and cheap.</li>
+    <li><strong>Cost and abuse protection:</strong> Cloudflare Turnstile, per-visitor rate limits, input length caps, a daily spend cap, and prompt caching.</li>
+  </ul>
+
+  <h3>Supporting services</h3>
+  <ul>
+    <li><strong>Email:</strong> Resend (free tier) for lead notifications; partner magic links via Supabase Auth.</li>
+    <li><strong>Lead continuity:</strong> new leads also sync to the existing Google Sheet, so the current workflow keeps working.</li>
+    <li><strong>Analytics:</strong> cookie-free (Vercel Analytics or Umami), so no cookie banner.</li>
+    <li><strong>Admin (<code>/admin</code>):</strong> magic-link login for allow-listed emails; leads, moderation queues, demo usage and AI spend.</li>
+  </ul>
+</section>
+
+<!-- ═══════════ PHASES 6–7 ═══════════ -->
+<section>
+  <div class="phase-head"><span class="num">09</span><h2>Phases 6–7: Build &amp; launch</h2></div>
+  <h3>Phase 6: Pages</h3>
+  <p>Six pages, in this order: Home → How it works → Lab → Partners → About → Legal, plus the Book a demo modal. Every page uses only styleguide components and copy from the message files.</p>
+  <h3>Phase 7: SEO, performance, launch</h3>
+  <ul>
+    <li>Per-page metadata and branded social images, sitemap.xml, robots, structured data, hreflang ready for Danish.</li>
+    <li>Targets: Lighthouse 95+ in all categories, LCP under 2 seconds, CLS under 0.05, WCAG 2.2 AA.</li>
+    <li>Point the domain at the new deployment.</li>
+  </ul>
+</section>
+
+<!-- ═══════════ REVIEW / COSTS / INPUTS ═══════════ -->
+<section>
+  <div class="phase-head"><span class="num">10</span><h2>Review protocol, costs, inputs</h2></div>
+  <h3>Self-review after every edit</h3>
+  <ol>
+    <li>Typecheck and lint must pass.</li>
+    <li>Screenshots of every changed route at 1440 px and 390 px, light and dark, checked for contrast, spacing, overflow, clipping and leftover placeholders.</li>
+    <li>Copy check: plain language, no em dashes, matches the voice guide.</li>
+    <li>Fix, re-screenshot, and only then move on.</li>
+  </ol>
+
+  <h3>Running costs</h3>
+  <table>
+    <thead><tr><th>Service</th><th>While building</th><th>At public launch</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Supabase</strong></td><td>Free: 500 MB database, 50k monthly users, 1 GB storage. Pauses after 7 idle days.</td><td>Pro, $25 / month</td></tr>
+      <tr><td><strong>Hosting</strong></td><td>Vercel Hobby, free (non-commercial use)</td><td>Vercel Pro $20 / month, or Cloudflare Pages free</td></tr>
+      <tr><td><strong>Claude API</strong></td><td>Pay per use, small during development</td><td>Capped by rate limits and a daily spend limit</td></tr>
+      <tr><td><strong>Resend, Turnstile, analytics</strong></td><td>Free tiers</td><td>Free tiers at expected volume</td></tr>
+    </tbody>
+  </table>
+
+  <h3>What's needed from you along the way</h3>
+  <ul>
+    <li>Claude API key; Supabase and Vercel accounts; Resend and Turnstile keys.</li>
+    <li>High-resolution originals of the GR/TA mark, if they exist.</li>
+    <li>Founder names and photos for the About page.</li>
+    <li>Permission before naming DTU Skylab or any partner publicly.</li>
+    <li>Final illustrations, generated from the illustration bible.</li>
+  </ul>
+
+  <div class="callout" style="margin-top:8mm;">
+    <p><strong>Next step:</strong> Phase 1, brand assets. Nothing is built on top of the brand until you approve it.</p>
+  </div>
+</section>
+
+</body>
+</html>

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" role="img" aria-label="PLACEHOLDER · 4:5">
+  <rect width="800" height="1000" fill="#F6F1E8"/>
+  <ellipse cx="400" cy="860" rx="336" ry="70" fill="#E9DFCF"/>
+  <g transform="translate(160 540) scale(2.2222222222222223)">
+    <path d="M-34 90 C-34 40 -22 22 0 22 C22 22 34 40 34 90 Z" fill="#1F3D33"/>
+    <circle cx="0" cy="-4" r="20" fill="#C99B78"/>
+  </g><g transform="translate(640 600) scale(2.2222222222222223)">
+    <path d="M-34 90 C-34 40 -22 22 0 22 C22 22 34 40 34 90 Z" fill="#6F8C6A"/>
+    <circle cx="0" cy="-4" r="20" fill="#8A5E44"/>
+  </g>
+  <rect x="80" y="760" width="640" height="100" rx="20" fill="#B9946E"/>
+  <rect x="64" y="740" width="672" height="50" rx="25" fill="#C9A882"/>
+  <g fill="none" stroke="#9DBCCB" stroke-width="3.555555555555556" opacity="0.9"><path d="M160 531.1111111111111 Q400 320 640 591.1111111111111" /></g>
+  <circle cx="160" cy="531.1111111111111" r="7.777777777777779" fill="#9DBCCB"/><circle cx="640" cy="591.1111111111111" r="7.777777777777779" fill="#9DBCCB"/>
+  <text x="772" y="965" text-anchor="end" font-family="Geist Mono, monospace" font-size="24.444444444444446" fill="#5E5E57" opacity="0.7">PLACEHOLDER · 4:5</text>
+</svg>

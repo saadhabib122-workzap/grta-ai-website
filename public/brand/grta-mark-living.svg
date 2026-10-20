@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="GRTA">
+  <title>GRTA</title>
+  <style>
+    .thread { stroke-dasharray: 240; stroke-dashoffset: 240; animation: draw 2.4s cubic-bezier(.6,0,.2,1) .2s forwards; }
+    .node { opacity: 0; transform-origin: 50px 50px; animation: pulse 2.4s ease-out 1.6s infinite; }
+    @keyframes draw { to { stroke-dashoffset: 0; } }
+    @keyframes pulse { 0% { opacity: 0; transform: scale(.4); } 30% { opacity: 1; transform: scale(1); } 100% { opacity: 0; transform: scale(2.2); } }
+    @media (prefers-reduced-motion: reduce) { .thread { animation: none; stroke-dashoffset: 0; } .node { animation: none; opacity: 1; } }
+  </style>
+  <defs><clipPath id="lm-G"><rect x="14" y="14" width="34" height="34"/></clipPath><clipPath id="lm-R"><rect x="52" y="14" width="34" height="34"/></clipPath><clipPath id="lm-T"><rect x="14" y="52" width="34" height="34"/></clipPath><clipPath id="lm-A"><rect x="52" y="52" width="34" height="34"/></clipPath></defs>
+  <rect width="100" height="100" rx="12" fill="#15201B"/>
+  <g fill="none" stroke="#E8551E" stroke-width="8.5" stroke-linejoin="round" stroke-linecap="butt"><path clip-path="url(#lm-G)" d="M43.75 12 V18.25 H27.25 Q18.25 18.25 18.25 27.25 V34.75 Q18.25 43.75 27.25 43.75 H43.75 V31 H33"/><path clip-path="url(#lm-R)" d="M56.25 50 V18.25 H72.75 Q81.75 18.25 81.75 26.25 V25 Q81.75 33.5 72.75 33.5 H56.25 M72 33.5 L90 52"/><path clip-path="url(#lm-T)" d="M12 56.25 H50 M31 56.25 V88"/><path clip-path="url(#lm-A)" d="M56.25 88 V65.25 Q56.25 56.25 65.25 56.25 H72.75 Q81.75 56.25 81.75 65.25 V88 M56.25 73 H81.75"/></g>
+  <path class="thread" d="M50 4 V96 M4 50 H96" fill="none" stroke="#9DBCCB" stroke-width="1.2" stroke-linecap="round"/>
+  <circle class="node" cx="50" cy="50" r="3" fill="#9DBCCB"/>
+  <circle cx="50" cy="50" r="1.8" fill="#FFFDF9"/>
+</svg>

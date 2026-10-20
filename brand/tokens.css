@@ -1,0 +1,97 @@
+/* Generated from brand/tokens.json by brand/src/build_tokens.js. Do not edit by hand. */
+:root {
+  --c-birch: #F6F1E8;
+  --c-snow: #FFFDF9;
+  --c-ink: #15201B;
+  --c-forest: #1F3D33;
+  --c-moss: #6F8C6A;
+  --c-ember: #E8551E;
+  --c-fjord: #9DBCCB;
+  --c-clay: #D8B79B;
+  --c-stone: #5E5E57;
+  --c-line: #E4DCCD;
+  --font-display: 'Schibsted Grotesk', ui-sans-serif, system-ui, sans-serif;
+  --font-body: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'Geist Mono', ui-monospace, monospace;
+  --t-display-size: clamp(2.75rem, 1.6rem + 4.6vw, 5.5rem); --t-display-line: 1.0; --t-display-weight: 800; --t-display-tracking: -0.03em;
+  --t-h1-size: clamp(2.25rem, 1.5rem + 3vw, 4rem); --t-h1-line: 1.05; --t-h1-weight: 700; --t-h1-tracking: -0.025em;
+  --t-h2-size: clamp(1.75rem, 1.3rem + 1.8vw, 2.75rem); --t-h2-line: 1.1; --t-h2-weight: 700; --t-h2-tracking: -0.02em;
+  --t-h3-size: clamp(1.25rem, 1.1rem + 0.6vw, 1.5rem); --t-h3-line: 1.25; --t-h3-weight: 650; --t-h3-tracking: -0.01em;
+  --t-lead-size: clamp(1.125rem, 1.05rem + 0.35vw, 1.3rem); --t-lead-line: 1.55; --t-lead-weight: 400; --t-lead-tracking: 0;
+  --t-body-size: 1rem; --t-body-line: 1.6; --t-body-weight: 400; --t-body-tracking: 0;
+  --t-small-size: 0.875rem; --t-small-line: 1.5; --t-small-weight: 400; --t-small-tracking: 0;
+  --t-label-size: 0.75rem; --t-label-line: 1.4; --t-label-weight: 500; --t-label-tracking: 0.12em;
+  --r-sm: 6px;
+  --r-md: 12px;
+  --r-lg: 20px;
+  --r-xl: 32px;
+  --r-pill: 999px;
+  --s-1: 4px;
+  --s-2: 8px;
+  --s-3: 12px;
+  --s-4: 16px;
+  --s-5: 24px;
+  --s-6: 32px;
+  --s-7: 48px;
+  --s-8: 64px;
+  --s-9: 96px;
+  --s-10: 128px;
+  --shadow-soft: 0 1px 2px rgba(21,32,27,.04), 0 8px 24px -12px rgba(21,32,27,.12);
+  --shadow-lift: 0 2px 4px rgba(21,32,27,.05), 0 24px 48px -20px rgba(21,32,27,.22);
+  --shadow-glow: 0 0 0 1px rgba(157,188,203,.35), 0 0 24px rgba(157,188,203,.35);
+  --ease: cubic-bezier(.2,.7,.2,1);
+  --ease-in-out: cubic-bezier(.6,0,.2,1);
+  --dur-fast: 160ms;
+  --dur-base: 280ms;
+  --dur-slow: 600ms;
+  --layout-max: 1600px;
+  --layout-gutter: clamp(20px, 4vw, 64px);
+  --layout-frame: clamp(12px, 1.4vw, 24px);
+}
+:root, :root[data-theme="light"] {
+  --bg: #F6F1E8;
+  --surface: #FFFDF9;
+  --surface-sunk: #EFE8DB;
+  --text: #15201B;
+  --text-muted: #5E5E57;
+  --brand: #1F3D33;
+  --brand-text: #FFFDF9;
+  --accent: #E8551E;
+  --accent-text: #C2410C;
+  --thread: #5E889C;
+  --tag: #55704F;
+  --border: #E4DCCD;
+  --focus: #E8551E;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+  --bg: #101814;
+  --surface: #18231E;
+  --surface-sunk: #0C120F;
+  --text: #EFE9DE;
+  --text-muted: #A9ADA3;
+  --brand: #A8C7A0;
+  --brand-text: #101814;
+  --accent: #F07A45;
+  --accent-text: #F5966A;
+  --thread: #9DBCCB;
+  --tag: #A8C7A0;
+  --border: #2A3832;
+  --focus: #F07A45;
+}
+}
+:root[data-theme="dark"] {
+  --bg: #101814;
+  --surface: #18231E;
+  --surface-sunk: #0C120F;
+  --text: #EFE9DE;
+  --text-muted: #A9ADA3;
+  --brand: #A8C7A0;
+  --brand-text: #101814;
+  --accent: #F07A45;
+  --accent-text: #F5966A;
+  --thread: #9DBCCB;
+  --tag: #A8C7A0;
+  --border: #2A3832;
+  --focus: #F07A45;
+}

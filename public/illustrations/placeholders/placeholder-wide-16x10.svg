@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-label="PLACEHOLDER · 16:10">
+  <rect width="1600" height="1000" fill="#F6F1E8"/>
+  <ellipse cx="800" cy="860" rx="672" ry="70" fill="#E9DFCF"/>
+  <g transform="translate(320 540) scale(2.7777777777777777)">
+    <path d="M-34 90 C-34 40 -22 22 0 22 C22 22 34 40 34 90 Z" fill="#1F3D33"/>
+    <circle cx="0" cy="-4" r="20" fill="#C99B78"/>
+  </g><g transform="translate(560 600) scale(2.7777777777777777)">
+    <path d="M-34 90 C-34 40 -22 22 0 22 C22 22 34 40 34 90 Z" fill="#6F8C6A"/>
+    <circle cx="0" cy="-4" r="20" fill="#8A5E44"/>
+  </g><g transform="translate(800 540) scale(2.7777777777777777)">
+    <path d="M-34 90 C-34 40 -22 22 0 22 C22 22 34 40 34 90 Z" fill="#D8B79B"/>
+    <circle cx="0" cy="-4" r="20" fill="#E3C2A4"/>
+  </g><g transform="translate(1040 600) scale(2.7777777777777777)">
+    <path d="M-34 90 C-34 40 -22 22 0 22 C22 22 34 40 34 90 Z" fill="#3E5A4D"/>
+    <circle cx="0" cy="-4" r="20" fill="#6B4532"/>
+  </g><g transform="translate(1280 540) scale(2.7777777777777777)">
+    <path d="M-34 90 C-34 40 -22 22 0 22 C22 22 34 40 34 90 Z" fill="#B98F70"/>
+    <circle cx="0" cy="-4" r="20" fill="#D6A985"/>
+  </g>
+  <rect x="160" y="760" width="1280" height="100" rx="20" fill="#B9946E"/>
+  <rect x="128" y="740" width="1344" height="50" rx="25" fill="#C9A882"/>
+  <g fill="none" stroke="#9DBCCB" stroke-width="4.444444444444445" opacity="0.9"><path d="M320 528.8888888888889 Q440 320 560 588.8888888888889" /><path d="M320 528.8888888888889 Q560 320 800 528.8888888888889" /><path d="M560 588.8888888888889 Q680 380 800 528.8888888888889" /><path d="M560 588.8888888888889 Q800 380 1040 588.8888888888889" /><path d="M800 528.8888888888889 Q920 320 1040 588.8888888888889" /><path d="M800 528.8888888888889 Q1040 320 1280 528.8888888888889" /><path d="M1040 588.8888888888889 Q1160 380 1280 528.8888888888889" /></g>
+  <circle cx="320" cy="528.8888888888889" r="9.722222222222221" fill="#9DBCCB"/><circle cx="560" cy="588.8888888888889" r="9.722222222222221" fill="#9DBCCB"/><circle cx="800" cy="528.8888888888889" r="9.722222222222221" fill="#9DBCCB"/><circle cx="1040" cy="588.8888888888889" r="9.722222222222221" fill="#9DBCCB"/><circle cx="1280" cy="528.8888888888889" r="9.722222222222221" fill="#9DBCCB"/>
+  <text x="1552" y="965" text-anchor="end" font-family="Geist Mono, monospace" font-size="30.555555555555554" fill="#5E5E57" opacity="0.7">PLACEHOLDER · 16:10</text>
+</svg>
