@@ -28,7 +28,8 @@ export function HeroCard({ slot, alt, focus = '50% 50%', variant = 'side', prior
         {slot && alt && (
           <div
             className={cn(
-              'relative aspect-[4/3] sm:aspect-[16/9]',
+              /* below lg the full art shows at its own ratio, so no one is cropped out */
+              full ? 'relative aspect-[43/24]' : 'relative aspect-[4/3] sm:aspect-[16/9]',
               full
                 ? 'lg:absolute lg:inset-y-0 lg:right-0 lg:left-[24%] lg:aspect-auto xl:left-[12%]'
                 : 'lg:absolute lg:inset-y-0 lg:right-0 lg:aspect-auto lg:w-[58%] lg:[mask-image:linear-gradient(to_right,transparent_0%,#000_28%)]',
