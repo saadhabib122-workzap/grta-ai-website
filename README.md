@@ -42,7 +42,6 @@ Everything works without any keys: the Lab uses its built-in engine and leads go
 | `lib/ai/` | Claude client and prompts |
 | `app/api/` | Lab, lead and pulse endpoints |
 | `content/legal.ts` | Legal text |
-| `legacy/` | The previous one-page site (also tagged `v1-static`) |
 
 ## Checks
 
