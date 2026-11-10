@@ -36,32 +36,31 @@
       "label": "Who can lead our SAP migration?",
       "before": "Without GRTA",
       "after": "With GRTA",
-      "you": "Finance manager",
-      "usual": "The usual names",
-      "busy": "Busy",
-      "found": "{count} people found across the organisation",
       "switch": "Switch on GRTA",
       "switchOff": "Switch off GRTA",
       "slider": "Compare without and with GRTA",
-      "alt": "Without GRTA, a finance manager only sees the three colleagues he always asks, and all of them are busy. With GRTA switched on, the view zooms out to the whole organisation and six more people with the right skills light up, in finance, IT, procurement, operations, sales and HR.",
-      "matches": [
-        { "name": "Priya", "dept": "Finance", "skill": "Ran an SAP migration" },
-        { "name": "Jonas", "dept": "IT", "skill": "SAP S/4HANA" },
-        { "name": "Sofie", "dept": "Procurement", "skill": "Project lead" },
-        { "name": "Ahmed", "dept": "Operations", "skill": "Change management" },
-        { "name": "Clara", "dept": "Sales", "skill": "Negotiates in German" },
-        { "name": "Mikkel", "dept": "HR", "skill": "Wants to learn SAP" }
-      ],
-      "usualNames": ["Lars", "Mette", "Henrik"]
+      "alt": "Before: a senior finance manager asks the colleague he always asks, in a dim office with only his usual team around him. After: a younger colleague switches on GRTA, the view zooms out to the whole office, and people with the right skills across many teams light up in orange."
     }
   },
   "does": {
     "label": "What GRTA does",
     "title": "GRTA does three things.",
     "items": [
-      { "icon": "scout", "title": "Finds the competences you already have", "text": "Your organisation already holds CVs, development plans, feedback, courses and project history, but the information is scattered and unstructured. GRTA uses AI to turn it into a full picture of what each person can do and wants to do." },
-      { "icon": "translate", "title": "Turns business needs into competence needs", "text": "Leaders know the problem they need solved, not always the skills it takes. Describe it in your own words, and GRTA translates it into a precise skills brief, asking follow-up questions until it is sharp." },
-      { "icon": "match", "title": "Puts the two together", "text": "GRTA proposes the people and teams that fit, with alternative line-ups to choose between." }
+      {
+        "icon": "scout",
+        "title": "Finds the competences you already have",
+        "text": "Your organisation already holds CVs, development plans, feedback, courses and project history, but the information is scattered and unstructured. GRTA uses AI to turn it into a full picture of what each person can do and wants to do."
+      },
+      {
+        "icon": "translate",
+        "title": "Turns business needs into competence needs",
+        "text": "Leaders know the problem they need solved, not always the skills it takes. Describe it in your own words, and GRTA translates it into a precise skills brief, asking follow-up questions until it is sharp."
+      },
+      {
+        "icon": "match",
+        "title": "Puts the two together",
+        "text": "GRTA proposes the people and teams that fit, with alternative line-ups to choose between."
+      }
     ],
     "why": "AI is what makes this possible now. The information has always existed, but until recently no one could use it at scale. GRTA adds something your recruitment and HR systems do not have: a working picture of the competences already inside your organisation.",
     "cube": "Think of it as the step beyond a competence matrix: a multidimensional competence cube.",
@@ -72,10 +71,26 @@
     "label": "How it works",
     "title": "The ABCD process",
     "steps": [
-      { "letter": "A", "title": "Define the task", "text": "Describe the need in plain language. GRTA asks follow-up questions until the brief is sharp: skills, scope, timing, budget." },
-      { "letter": "B", "title": "Build the competence base", "text": "GRTA reads CVs plus the sources you already have: development plans, manager and customer feedback, courses and certifications. Your existing systems can feed it directly." },
-      { "letter": "C", "title": "Compare", "text": "GRTA matches what the task needs with what your people offer, using both hard skills and softer evidence." },
-      { "letter": "D", "title": "Decide", "text": "You get a shortlist of who fits, with alternative team line-ups to choose between, and availability taken into account if you wish." }
+      {
+        "letter": "A",
+        "title": "Define the task",
+        "text": "Describe the need in plain language. GRTA asks follow-up questions until the brief is sharp: skills, scope, timing, budget."
+      },
+      {
+        "letter": "B",
+        "title": "Build the competence base",
+        "text": "GRTA reads CVs plus the sources you already have: development plans, manager and customer feedback, courses and certifications. Your existing systems can feed it directly."
+      },
+      {
+        "letter": "C",
+        "title": "Compare",
+        "text": "GRTA matches what the task needs with what your people offer, using both hard skills and softer evidence."
+      },
+      {
+        "letter": "D",
+        "title": "Decide",
+        "text": "You get a shortlist of who fits, with alternative team line-ups to choose between, and availability taken into account if you wish."
+      }
     ],
     "smallPrint": "Each step combines artificial intelligence with business intelligence.",
     "screenshot": "Platform screenshot",
@@ -87,15 +102,39 @@
     "title": "See far more of your organisation.",
     "lead": "You see far more of your organisation than any one manager can, and you act on it the day you need it.",
     "main": [
-      { "icon": "spark", "title": "Hidden talent, found", "text": "The colleague in finance who has run an SAP migration before, or the engineer who negotiates fluently in German. Use what you have before paying consultants for what you don't." },
-      { "icon": "customers", "title": "Next in line, always", "text": "Every qualified person becomes visible, not just the ones their manager happens to know. When someone is busy or moves on, you can see who is ready to step in." },
-      { "icon": "availability", "title": "Always current, not a one-off audit", "text": "Traditional competence mapping takes months and is outdated within days. GRTA stays up to date as your data changes." }
+      {
+        "icon": "spark",
+        "title": "Hidden talent, found",
+        "text": "The colleague in finance who has run an SAP migration before, or the engineer who negotiates fluently in German. Use what you have before paying consultants for what you don't."
+      },
+      {
+        "icon": "customers",
+        "title": "Next in line, always",
+        "text": "Every qualified person becomes visible, not just the ones their manager happens to know. When someone is busy or moves on, you can see who is ready to step in."
+      },
+      {
+        "icon": "availability",
+        "title": "Always current, not a one-off audit",
+        "text": "Traditional competence mapping takes months and is outdated within days. GRTA stays up to date as your data changes."
+      }
     ],
     "moreTitle": "On top of that, you also get:",
     "more": [
-      { "icon": "gap", "title": "Gaps made visible", "text": "See where you lack skills before a project or bid exposes it." },
-      { "icon": "strategy", "title": "Growth for your people", "text": "Employees who want to learn something new get matched to the projects that teach it, so the next project starts with more people who can do it." },
-      { "icon": "lock", "title": "Knowledge that stays", "text": "When managers or teams change, the overview of who can do what stays with the organisation." }
+      {
+        "icon": "gap",
+        "title": "Gaps made visible",
+        "text": "See where you lack skills before a project or bid exposes it."
+      },
+      {
+        "icon": "strategy",
+        "title": "Growth for your people",
+        "text": "Employees who want to learn something new get matched to the projects that teach it, so the next project starts with more people who can do it."
+      },
+      {
+        "icon": "lock",
+        "title": "Knowledge that stays",
+        "text": "When managers or teams change, the overview of who can do what stays with the organisation."
+      }
     ],
     "ctaText": "Ready to put your existing people to better use?",
     "cta": "Book a demo"
@@ -112,9 +151,18 @@
     "label": "Customer cases",
     "title": "What it looks like in practice",
     "items": [
-      { "title": "University research", "text": "A university team developing a new project needed competences it could not find in-house. With GRTA, it found them not only at DTU but also at Makerere University in Uganda." },
-      { "title": "Consultancy bid", "text": "A consultancy preparing a large public tender had to name five consultants with Salesforce and public-sector experience. GRTA found them in one search, including two in another office the bid team had not considered." },
-      { "title": "After a reorganisation", "text": "When a company changed its layer of middle managers, it also lost their overview of who could do what. GRTA rebuilt the overview from existing CVs and feedback, so project leaders could staff new work without relying on former managers' knowledge." }
+      {
+        "title": "University research",
+        "text": "A university team developing a new project needed competences it could not find in-house. With GRTA, it found them not only at DTU but also at Makerere University in Uganda."
+      },
+      {
+        "title": "Consultancy bid",
+        "text": "A consultancy preparing a large public tender had to name five consultants with Salesforce and public-sector experience. GRTA found them in one search, including two in another office the bid team had not considered."
+      },
+      {
+        "title": "After a reorganisation",
+        "text": "When a company changed its layer of middle managers, it also lost their overview of who could do what. GRTA rebuilt the overview from existing CVs and feedback, so project leaders could staff new work without relying on former managers' knowledge."
+      }
     ],
     "cta": "Get in touch"
   },
@@ -123,10 +171,26 @@
     "title": "Built by people who have staffed teams the hard way.",
     "lead": "GRTA is built by people with decades of enterprise, IT operations and HR experience, who have assembled project teams the hard way and know the need first-hand.",
     "people": [
-      { "name": "Thomas Pontoppidan Jørner", "role": "CEO, Co-founder", "initials": "TJ" },
-      { "name": "Andi Sonntag Debel", "role": "Founder and CCO", "initials": "AD" },
-      { "name": "Steen Rasmussen", "role": "CDO, Co-founder", "initials": "SR" },
-      { "name": "Anders Olsen", "role": "CTO, Co-founder", "initials": "AO" }
+      {
+        "name": "Thomas Pontoppidan Jørner",
+        "role": "CEO, Co-founder",
+        "photo": "/team/thomas-pontoppidan-jorner.webp"
+      },
+      {
+        "name": "Andi Sonntag Debel",
+        "role": "Founder and CCO",
+        "photo": "/team/andi-sonntag-debel.webp"
+      },
+      {
+        "name": "Steen Rasmussen",
+        "role": "CDO, Co-founder",
+        "photo": "/team/steen-rasmussen.webp"
+      },
+      {
+        "name": "Anders Olsen",
+        "role": "CTO, Co-founder",
+        "photo": "/team/anders-olsen.webp"
+      }
     ],
     "cta": "Talk to us"
   },
@@ -134,10 +198,22 @@
     "label": "Security and compliance",
     "title": "Security and compliance are designed in from the start.",
     "items": [
-      { "icon": "globe", "text": "Dedicated hosting on Danish and European infrastructure, with the option of your own servers and dedicated GPUs" },
-      { "icon": "check", "text": "Operated according to ITIL and ISO 27001/27002 principles" },
-      { "icon": "lock", "text": "GDPR by design: data is used with consent and deleted when someone leaves" },
-      { "icon": "collective", "text": "GRTA runs inside your organisation, so your organisation stays in control of its data" }
+      {
+        "icon": "globe",
+        "text": "Dedicated hosting on Danish and European infrastructure, with the option of your own servers and dedicated GPUs"
+      },
+      {
+        "icon": "check",
+        "text": "Operated according to ITIL and ISO 27001/27002 principles"
+      },
+      {
+        "icon": "lock",
+        "text": "GDPR by design: data is used with consent and deleted when someone leaves"
+      },
+      {
+        "icon": "collective",
+        "text": "GRTA runs inside your organisation, so your organisation stays in control of its data"
+      }
     ]
   },
   "start": {
@@ -205,5 +281,10 @@
     "title": "We couldn't find that page.",
     "text": "It may have moved when we rebuilt the site.",
     "home": "Go to the home page"
+  },
+  "illustrations": {
+    "puzzle": "A hand places an orange puzzle piece into a large organisation chart, linking a need to the right person.",
+    "building": "A cutaway of an office building with people on every floor; a few of them, on different floors, are highlighted in orange and connected.",
+    "staircase": "Colleagues help each other up a staircase of blocks towards an orange flag."
   }
 }

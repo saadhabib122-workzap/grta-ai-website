@@ -23,7 +23,7 @@ Every call to action opens the same contact form. Contact requests and news sign
 
 | What | Where |
 |---|---|
-| Team photos and short profiles | `team.people` in `messages/en.json`, and the initials circle in `app/[locale]/page.tsx` |
+| Short team profiles | `team.people` in `messages/en.json` (photos live in `public/team/`) |
 | Platform screenshot | The "Screenshot of the GRTA platform coming soon" frame in `app/[locale]/page.tsx` |
 | Log in link | Left out until the platform is confirmed invite-only; add it to `components/layout/Nav.tsx` |
 

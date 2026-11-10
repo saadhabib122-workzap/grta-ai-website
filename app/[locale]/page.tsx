@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
+import Image from 'next/image';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { Icon } from '@/components/ui/Icon';
 import { Section, SectionHead } from '@/components/ui/Section';
@@ -27,6 +28,15 @@ function Cta({ text, label, mode = 'demo', onDark = false }: { text?: ReactNode;
   );
 }
 
+/** A section illustration, framed the same way everywhere. */
+function Illustration({ name, alt }: { name: string; alt: string }) {
+  return (
+    <div className="overflow-hidden rounded-[20px] bg-white ring-1 ring-line">
+      <Image src={`/illustrations/${name}.webp`} alt={alt} width={1800} height={1005} sizes="(min-width: 1024px) 50vw, 100vw" className="h-auto w-full" />
+    </div>
+  );
+}
+
 function Box({ item, big = false }: { item: Item; big?: boolean }) {
   return (
     <li className={big ? 'card p-7' : 'rounded-[20px] bg-sunk p-6'}>
@@ -47,7 +57,7 @@ export default async function Home({ params }: Props) {
   const does = t.raw('does.items') as Item[];
   const steps = t.raw('how.steps') as Array<{ letter: string; title: string; text: string }>;
   const cases = t.raw('cases.items') as Array<{ title: string; text: string }>;
-  const people = t.raw('team.people') as Array<{ name: string; role: string; initials: string }>;
+  const people = t.raw('team.people') as Array<{ name: string; role: string; photo: string }>;
   const security = t.raw('security.items') as Array<{ icon: string; text: string }>;
 
   return (
@@ -73,9 +83,12 @@ export default async function Home({ params }: Props) {
           <ul className="mt-12 grid gap-5 md:grid-cols-3">
             {does.map((it) => <Box key={it.title} item={it} big />)}
           </ul>
-          <div className="mt-12 grid max-w-4xl gap-4 text-lg">
-            <p>{t('does.why')}</p>
-            <p className="font-semibold">{t('does.cube')}</p>
+          <div className="mt-12 grid items-center gap-10 lg:grid-cols-2">
+            <div className="grid gap-4 text-lg">
+              <p>{t('does.why')}</p>
+              <p className="font-semibold">{t('does.cube')}</p>
+            </div>
+            <Illustration name="puzzle" alt={t('illustrations.puzzle')} />
           </div>
           <Cta text={t('does.ctaText')} label={t('does.cta')} />
         </div>
@@ -116,7 +129,10 @@ export default async function Home({ params }: Props) {
       {/* 3. What you get */}
       <Section id="get" tone="sunk" aria-labelledby="get-title">
         <div className="wrap">
-          <SectionHead label={t('get.label')} title={t('get.title')} lead={t('get.lead')} id="get-title" />
+          <div className="grid items-center gap-10 lg:grid-cols-2">
+            <SectionHead label={t('get.label')} title={t('get.title')} lead={t('get.lead')} id="get-title" />
+            <Illustration name="building" alt={t('illustrations.building')} />
+          </div>
           <ul className="mt-12 grid gap-5 md:grid-cols-3">
             {(t.raw('get.main') as Item[]).map((it) => <Box key={it.title} item={it} big />)}
           </ul>
@@ -130,13 +146,14 @@ export default async function Home({ params }: Props) {
 
       {/* 4. Greater together */}
       <Section tone="brand" aria-labelledby="together-title">
-        <div className="wrap"><div className="max-w-4xl">
+        <div className="wrap grid items-center gap-12 lg:grid-cols-[1.1fr_1fr]"><div>
           <p className="t-label mb-4">{t('together.label')}</p>
           <h2 id="together-title" className="t-h2">{t('together.title')}</h2>
           <p className="mt-6 text-xl leading-relaxed">{t('together.text')}</p>
           <p className="mt-4 text-xl leading-relaxed text-muted">{t('together.meaning')}</p>
           <Cta text={t('together.ctaText')} label={t('together.cta')} mode="cocreate" onDark />
-        </div></div>
+        </div>
+        <Illustration name="staircase" alt={t('illustrations.staircase')} /></div>
       </Section>
 
       {/* 5. Customer cases */}
@@ -163,8 +180,7 @@ export default async function Home({ params }: Props) {
           <ul className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {people.map((p) => (
               <li key={p.name} className="card p-6">
-                {/* shortcut: initials until the LinkedIn photos and short profiles arrive */}
-                <span aria-hidden className="grid h-24 w-24 place-items-center rounded-full bg-[#DCE6F2] text-2xl font-bold text-brand">{p.initials}</span>
+                <Image src={p.photo} alt={p.name} width={96} height={96} className="h-24 w-24 rounded-full object-cover" />
                 <h3 className="mt-5 text-lg font-bold">{p.name}</h3>
                 <p className="mt-1 text-muted">{p.role}</p>
               </li>
