@@ -31,7 +31,7 @@ export function NewsSignup() {
   }
 
   return (
-    <div className="card p-6 sm:p-8">
+    <div className="rounded-[28px] bg-white p-7 shadow-soft ring-1 ring-line sm:p-10">
       <h3 className="t-h3">{t('title')}</h3>
       <p className="mt-2 text-muted">{t('text')}</p>
       {status === 'done' ? (

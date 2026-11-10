@@ -15,14 +15,13 @@ export function Section({ id, tone = 'default', className, children, ...rest }: 
     brand: 'bg-brand text-white [--text-muted:#C9D6E6] [--tag:#FFB48F] [--border:#3A6597]',
   };
   return (
-    <section id={id} className={cn('relative py-20 md:py-28', tones[tone], className)} {...rest}>
+    <section id={id} className={cn('relative py-24 md:py-36', tones[tone], className)} {...rest}>
       {children}
     </section>
   );
 }
 
-export function SectionHead({ label, title, lead, id, align = 'left', className, titleClass }: {
-  label?: string;
+export function SectionHead({ title, lead, id, align = 'left', className, titleClass }: {
   title: ReactNode;
   lead?: ReactNode;
   id?: string;
@@ -32,9 +31,8 @@ export function SectionHead({ label, title, lead, id, align = 'left', className,
 }) {
   return (
     <div className={cn('max-w-3xl', align === 'center' && 'mx-auto text-center', className)}>
-      {label && <p className="t-label mb-4">{label}</p>}
       <h2 id={id} className={cn('t-h2', titleClass)}>{title}</h2>
-      {lead && <p className="t-lead mt-5">{lead}</p>}
+      {lead && <p className="t-lead mt-6 max-w-2xl">{lead}</p>}
     </div>
   );
 }

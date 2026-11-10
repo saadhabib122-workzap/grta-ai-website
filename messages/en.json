@@ -43,21 +43,20 @@
     }
   },
   "does": {
-    "label": "What GRTA does",
     "title": "GRTA does three things.",
     "items": [
       {
-        "icon": "scout",
+        "icon": "coverage",
         "title": "Finds the competences you already have",
         "text": "Your organisation already holds CVs, development plans, feedback, courses and project history, but the information is scattered and unstructured. GRTA uses AI to turn it into a full picture of what each person can do and wants to do."
       },
       {
-        "icon": "translate",
+        "icon": "spark",
         "title": "Turns business needs into competence needs",
         "text": "Leaders know the problem they need solved, not always the skills it takes. Describe it in your own words, and GRTA translates it into a precise skills brief, asking follow-up questions until it is sharp."
       },
       {
-        "icon": "match",
+        "icon": "collective",
         "title": "Puts the two together",
         "text": "GRTA proposes the people and teams that fit, with alternative line-ups to choose between."
       }
@@ -68,7 +67,6 @@
     "cta": "Book a demo"
   },
   "how": {
-    "label": "How it works",
     "title": "The ABCD process",
     "steps": [
       {
@@ -98,22 +96,21 @@
     "cta": "See it on your own organisation"
   },
   "get": {
-    "label": "What you get",
     "title": "See far more of your organisation.",
     "lead": "You see far more of your organisation than any one manager can, and you act on it the day you need it.",
     "main": [
       {
-        "icon": "spark",
+        "icon": "customers",
         "title": "Hidden talent, found",
         "text": "The colleague in finance who has run an SAP migration before, or the engineer who negotiates fluently in German. Use what you have before paying consultants for what you don't."
       },
       {
-        "icon": "customers",
+        "icon": "variants",
         "title": "Next in line, always",
         "text": "Every qualified person becomes visible, not just the ones their manager happens to know. When someone is busy or moves on, you can see who is ready to step in."
       },
       {
-        "icon": "availability",
+        "icon": "check",
         "title": "Always current, not a one-off audit",
         "text": "Traditional competence mapping takes months and is outdated within days. GRTA stays up to date as your data changes."
       }
@@ -126,7 +123,7 @@
         "text": "See where you lack skills before a project or bid exposes it."
       },
       {
-        "icon": "strategy",
+        "icon": "plus",
         "title": "Growth for your people",
         "text": "Employees who want to learn something new get matched to the projects that teach it, so the next project starts with more people who can do it."
       },
@@ -140,7 +137,6 @@
     "cta": "Book a demo"
   },
   "together": {
-    "label": "Greater together",
     "title": "AI that enables people.",
     "text": "GRTA makes your people's competences visible, so they get to work on more of the assignments they want, and you make better use of the people you already employ.",
     "meaning": "Greater together means exactly that: people and AI combined achieve more than either alone.",
@@ -148,7 +144,6 @@
     "cta": "Let's talk"
   },
   "cases": {
-    "label": "Customer cases",
     "title": "What it looks like in practice",
     "items": [
       {
@@ -167,7 +162,6 @@
     "cta": "Get in touch"
   },
   "team": {
-    "label": "Who we are",
     "title": "Built by people who have staffed teams the hard way.",
     "lead": "GRTA is built by people with decades of enterprise, IT operations and HR experience, who have assembled project teams the hard way and know the need first-hand.",
     "people": [
@@ -195,11 +189,10 @@
     "cta": "Talk to us"
   },
   "security": {
-    "label": "Security and compliance",
     "title": "Security and compliance are designed in from the start.",
     "items": [
       {
-        "icon": "globe",
+        "icon": "variants",
         "text": "Dedicated hosting on Danish and European infrastructure, with the option of your own servers and dedicated GPUs"
       },
       {
@@ -217,7 +210,6 @@
     ]
   },
   "start": {
-    "label": "Getting started",
     "title": "Start with the documents you already have.",
     "text": "Upload your people's CVs and a short profile questionnaire, describe your first task, and see who GRTA puts forward.",
     "access": "Access is by invitation only, and each customer has its own secure environment.",

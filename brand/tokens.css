@@ -16,10 +16,10 @@
   --font-display: 'Inter', ui-sans-serif, system-ui, sans-serif;
   --font-body: 'Inter', ui-sans-serif, system-ui, sans-serif;
   --t-display-size: clamp(2.75rem, 1.6rem + 4.6vw, 5.5rem); --t-display-line: 1.0; --t-display-weight: 800; --t-display-tracking: -0.03em;
-  --t-h1-size: clamp(2.25rem, 1.5rem + 3vw, 4rem); --t-h1-line: 1.05; --t-h1-weight: 700; --t-h1-tracking: -0.025em;
-  --t-h2-size: clamp(1.75rem, 1.3rem + 1.8vw, 2.75rem); --t-h2-line: 1.1; --t-h2-weight: 700; --t-h2-tracking: -0.02em;
+  --t-h1-size: clamp(2.6rem, 1.6rem + 3.8vw, 4.75rem); --t-h1-line: 1.02; --t-h1-weight: 700; --t-h1-tracking: -0.035em;
+  --t-h2-size: clamp(2rem, 1.35rem + 2.4vw, 3.4rem); --t-h2-line: 1.06; --t-h2-weight: 700; --t-h2-tracking: -0.03em;
   --t-h3-size: clamp(1.25rem, 1.1rem + 0.6vw, 1.5rem); --t-h3-line: 1.25; --t-h3-weight: 650; --t-h3-tracking: -0.01em;
-  --t-lead-size: clamp(1.125rem, 1.05rem + 0.35vw, 1.3rem); --t-lead-line: 1.55; --t-lead-weight: 400; --t-lead-tracking: 0;
+  --t-lead-size: clamp(1.15rem, 1.05rem + 0.45vw, 1.4rem); --t-lead-line: 1.55; --t-lead-weight: 400; --t-lead-tracking: 0;
   --t-body-size: 1rem; --t-body-line: 1.6; --t-body-weight: 400; --t-body-tracking: 0;
   --t-small-size: 0.875rem; --t-small-line: 1.5; --t-small-weight: 400; --t-small-tracking: 0;
   --t-label-size: 0.75rem; --t-label-line: 1.4; --t-label-weight: 500; --t-label-tracking: 0.12em;
