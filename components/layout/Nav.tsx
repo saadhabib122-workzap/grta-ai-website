@@ -6,6 +6,7 @@ import { Link } from '@/i18n/navigation';
 import { Lockup } from '@/components/brand/Logo';
 import { Icon } from '@/components/ui/Icon';
 import { ContactButton } from '@/components/contact/ContactModal';
+import { ThemeToggle } from './ThemeToggle';
 import { cn } from '@/lib/cn';
 
 /* Section anchors on the one-page site. "/#id" also works from the legal page.
@@ -30,7 +31,7 @@ export function Nav() {
   }, [open]);
 
   return (
-    <header className={cn('fixed inset-x-0 top-0 z-50 bg-white/90 backdrop-blur-md transition-shadow duration-300', (scrolled || open) && 'shadow-[0_1px_0_var(--border)]')}>
+    <header className={cn('fixed inset-x-0 top-0 z-50 bg-bg/90 backdrop-blur-md transition-shadow duration-300', (scrolled || open) && 'shadow-[0_1px_0_var(--border)]')}>
       <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:rounded-md focus:bg-surface focus:px-3 focus:py-2">
         {t('skip')}
       </a>
@@ -51,7 +52,10 @@ export function Nav() {
           </ul>
         </nav>
 
-        <ContactButton className="hidden lg:inline-flex">{t('bookDemo')}</ContactButton>
+        <div className="hidden items-center gap-2 lg:flex">
+          <ThemeToggle label={t('theme')} />
+          <ContactButton>{t('bookDemo')}</ContactButton>
+        </div>
 
         <button
           type="button"
@@ -66,7 +70,7 @@ export function Nav() {
       </div>
 
       {open && (
-        <div id="mobile-menu" className="h-[calc(100dvh-72px)] overflow-y-auto border-t border-line bg-white lg:hidden">
+        <div id="mobile-menu" className="h-[calc(100dvh-72px)] overflow-y-auto border-t border-line bg-bg lg:hidden">
           <nav aria-label={t('primary')} className="wrap flex flex-col gap-1 py-6">
             {LINKS.map((l) => (
               <a key={l} href={`/#${l}`} onClick={() => setOpen(false)} className="t-h3 rounded-md py-3">
@@ -74,6 +78,7 @@ export function Nav() {
               </a>
             ))}
             <ContactButton size="lg" className="mt-6 w-full">{t('bookDemo')}</ContactButton>
+            <div className="mt-4"><ThemeToggle label={t('theme')} /></div>
           </nav>
         </div>
       )}

@@ -112,7 +112,7 @@ export default async function Home({ params }: Props) {
 
           {/* shortcut: placeholder until Andi sends platform screenshots; swap in a next/image */}
           <div role="img" aria-label={t('how.screenshot')} className="mx-auto mt-20 max-w-4xl overflow-hidden rounded-[28px] bg-sunk ring-1 ring-line">
-            <div className="flex gap-1.5 bg-white px-5 py-3.5">
+            <div className="flex gap-1.5 bg-surface px-5 py-3.5">
               <span className="h-2.5 w-2.5 rounded-full bg-line" /><span className="h-2.5 w-2.5 rounded-full bg-line" /><span className="h-2.5 w-2.5 rounded-full bg-line" />
             </div>
             <p className="grid aspect-[16/5] place-items-center p-6 text-center text-muted">{t('how.screenshotNote')}</p>
@@ -130,7 +130,7 @@ export default async function Home({ params }: Props) {
           </div>
           <ul className="mt-20 grid gap-6 md:grid-cols-3">
             {main.map((it) => (
-              <li key={it.title} className="rounded-[28px] bg-white p-8 shadow-soft lg:p-10">
+              <li key={it.title} className="rounded-[28px] bg-surface p-8 shadow-soft lg:p-10">
                 <Icon name={it.icon} size={36} className="text-ember" />
                 <h3 className="t-h3 mt-8">{it.title}</h3>
                 <p className="mt-3 leading-relaxed text-muted">{it.text}</p>

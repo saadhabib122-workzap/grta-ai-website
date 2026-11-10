@@ -12,7 +12,7 @@ export function Section({ id, tone = 'default', className, children, ...rest }: 
     default: '',
     sunk: 'bg-sunk',
     // Navy block with light text
-    brand: 'bg-brand text-white [--text-muted:#C9D6E6] [--tag:#FFB48F] [--border:#3A6597]',
+    brand: 'bg-navy text-white [--text-muted:#C9D6E6] [--tag:#FFB48F] [--border:#3A6597]',
   };
   return (
     <section id={id} className={cn('relative py-24 md:py-36', tones[tone], className)} {...rest}>

@@ -25,7 +25,8 @@
       "get": "What you get",
       "cases": "Cases",
       "team": "Who we are"
-    }
+    },
+    "theme": "Switch between light and dark"
   },
   "hero": {
     "title": "The right people on the right work.",

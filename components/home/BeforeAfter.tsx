@@ -73,7 +73,7 @@ export function BeforeAfter() {
           type="button"
           onClick={() => animateTo(on ? 0 : 100)}
           aria-pressed={on}
-          className="inline-flex h-10 shrink-0 items-center gap-2.5 rounded-full border border-line bg-white px-4 text-sm font-semibold text-fg shadow-soft hover:bg-sunk"
+          className="inline-flex h-10 shrink-0 items-center gap-2.5 rounded-full border border-line bg-surface px-4 text-sm font-semibold text-fg shadow-soft hover:bg-sunk"
         >
           <span className={`relative h-5 w-9 rounded-full transition-colors ${on ? 'bg-ember' : 'bg-[#C3CCD7]'}`}>
             <span className={`absolute top-0.5 h-4 w-4 rounded-full bg-white transition-[left] ${on ? 'left-[18px]' : 'left-0.5'}`} />

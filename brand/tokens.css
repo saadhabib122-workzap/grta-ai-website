@@ -65,3 +65,18 @@
   --border: #E2E8EF;
   --focus: #E8551E;
 }
+:root[data-theme="dark"] {
+  --bg: #0F1720;
+  --surface: #16212D;
+  --surface-sunk: #121C27;
+  --text: #E8EDF3;
+  --text-muted: #A3B0BF;
+  --brand: #8DB4E6;
+  --brand-text: #0F1720;
+  --accent: #F07A45;
+  --accent-text: #F5966A;
+  --thread: #7FA7CF;
+  --tag: #F5966A;
+  --border: #263443;
+  --focus: #F07A45;
+}

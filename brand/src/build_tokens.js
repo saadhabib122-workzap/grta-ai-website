@@ -35,6 +35,8 @@ for (const [k, v] of Object.entries(tokens.motion)) lines.push(`  --${k.startsWi
 for (const [k, v] of Object.entries(tokens.layout)) lines.push(`  --layout-${k}: ${v};`);
 lines.push('}');
 block(':root', tokens.theme.light, '');
+// Dark is opt-in only (the theme switch sets data-theme); the site never follows the OS setting
+block(':root[data-theme="dark"]', tokens.theme.dark, '');
 
 const cssOut = path.resolve(__dirname, '../tokens.css');
 fs.writeFileSync(cssOut, lines.join('\n') + '\n');
@@ -64,7 +66,7 @@ const pairs = (t) => [
 ].map(([f, b, min]) => ({ f, b, min, fg: resolve(t[f]), bg: resolve(t[b]) }));
 
 let failed = 0;
-for (const mode of ['light']) {
+for (const mode of ['light', 'dark']) {
   console.log(`\n  ${mode}`);
   for (const p of pairs(tokens.theme[mode])) {
     const r = ratio(p.fg, p.bg);
