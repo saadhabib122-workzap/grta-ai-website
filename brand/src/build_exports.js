@@ -72,16 +72,16 @@ function buildIco(pngPaths) {
   const patternUrl = `data:image/svg+xml;base64,${Buffer.from(pattern).toString('base64')}`;
   await page.setViewport({ width: 1200, height: 630, deviceScaleFactor: 1 });
   await page.setContent(`<html><head>
-    <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@800&family=Inter:wght@400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;800&display=swap" rel="stylesheet">
     </head><body style="margin:0">
-    <div style="width:1200px;height:630px;background:${C.birch};position:relative;overflow:hidden;font-family:Inter">
+    <div style="width:1200px;height:630px;background:#FFFFFF;position:relative;overflow:hidden;font-family:Inter">
       <div style="position:absolute;right:-40px;top:0;bottom:0;width:520px;background:url(${patternUrl});opacity:.9;
         -webkit-mask-image:linear-gradient(to left,#000 40%,transparent)"></div>
       <div style="position:absolute;left:80px;top:72px">${lockup}</div>
       <div style="position:absolute;left:80px;bottom:96px;width:760px">
-        <div style="font-family:'Schibsted Grotesk';font-weight:800;font-size:92px;line-height:.98;letter-spacing:-.03em;color:${C.ink}">
-          People move<br><span style="color:${C.forest}">work forward.</span></div>
-        <div style="margin-top:28px;font-size:26px;color:${C.stone}">The right people, around the right problem, at the right time.</div>
+        <div style="font-weight:800;font-size:88px;line-height:1;letter-spacing:-.035em;color:${C.slate}">
+          The right people<br><span style="color:${C.navy}">on the right work.</span></div>
+        <div style="margin-top:28px;font-size:26px;color:#556170">GRTA finds who across your organisation can deliver it.</div>
       </div>
       <div style="position:absolute;right:80px;bottom:96px;width:14px;height:14px;border-radius:50%;background:${C.ember}"></div>
     </div></body></html>`, { waitUntil: 'networkidle0' });

@@ -56,13 +56,13 @@ export function Mark({ size = 40, className, block = 'var(--mark-block, var(--c-
   );
 }
 
-/** Mark + "grta.ai" wordmark. The wordmark follows the text colour, so it works in both themes. */
+/** Mark + "GRTA" wordmark (always capitals). The wordmark follows the text colour, so it works in both themes. */
 export function Lockup({ size = 34, className, living = false }: { size?: number; className?: string; living?: boolean }) {
   return (
     <span className={cn('inline-flex items-center gap-2.5', className)}>
       <Mark size={size} living={living} />
       <span className="font-display font-bold tracking-tight" style={{ fontSize: size * 0.62, lineHeight: 1 }}>
-        grta.ai
+        GRTA
       </span>
     </span>
   );

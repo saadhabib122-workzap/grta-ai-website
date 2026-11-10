@@ -3,17 +3,16 @@ import { cn } from '@/lib/cn';
 
 export function Section({ id, tone = 'default', className, children, ...rest }: {
   id?: string;
-  tone?: 'default' | 'surface' | 'forest' | 'sunk';
+  tone?: 'default' | 'sunk' | 'brand';
   className?: string;
   children: ReactNode;
   'aria-labelledby'?: string;
 }) {
   const tones = {
     default: '',
-    surface: 'bg-surface',
     sunk: 'bg-sunk',
-    // Forest stays forest in both themes, with light text
-    forest: 'bg-forest text-snow [--text-muted:#C9D3CC] [--tag:var(--c-fjord)] [--border:#2F5245]',
+    // Navy block with light text
+    brand: 'bg-brand text-white [--text-muted:#C9D6E6] [--tag:#FFB48F] [--border:#3A6597]',
   };
   return (
     <section id={id} className={cn('relative py-20 md:py-28', tones[tone], className)} {...rest}>

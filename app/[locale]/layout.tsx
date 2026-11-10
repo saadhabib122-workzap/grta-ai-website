@@ -1,18 +1,16 @@
 import type { Metadata, Viewport } from 'next';
 import { notFound } from 'next/navigation';
-import { Schibsted_Grotesk, Inter, Geist_Mono } from 'next/font/google';
+import { Inter } from 'next/font/google';
+import { Analytics } from '@vercel/analytics/next';
 import { NextIntlClientProvider, hasLocale } from 'next-intl';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { routing } from '@/i18n/routing';
 import { Nav } from '@/components/layout/Nav';
 import { Footer } from '@/components/layout/Footer';
 import { ContactModalProvider } from '@/components/contact/ContactModal';
-import { themeScript } from '@/components/layout/ThemeToggle';
 import '../globals.css';
 
-const display = Schibsted_Grotesk({ subsets: ['latin'], weight: ['500', '600', '700', '800'], variable: '--font-schibsted', display: 'swap' });
-const body = Inter({ subsets: ['latin'], variable: '--font-inter', display: 'swap' });
-const mono = Geist_Mono({ subsets: ['latin'], weight: ['400', '500'], variable: '--font-geist-mono', display: 'swap' });
+const inter = Inter({ subsets: ['latin'], variable: '--font-inter', display: 'swap' });
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://grta.ai';
 
@@ -33,10 +31,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 }
 
 export const viewport: Viewport = {
-  themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#F6F1E8' },
-    { media: '(prefers-color-scheme: dark)', color: '#101814' },
-  ],
+  themeColor: '#FFFFFF',
 };
 
 export default async function LocaleLayout({ children, params }: { children: React.ReactNode; params: Promise<{ locale: string }> }) {
@@ -45,10 +40,7 @@ export default async function LocaleLayout({ children, params }: { children: Rea
   setRequestLocale(locale);
 
   return (
-    <html lang={locale} className={`${display.variable} ${body.variable} ${mono.variable}`} suppressHydrationWarning>
-      <head>
-        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
-      </head>
+    <html lang={locale} className={inter.variable}>
       <body>
         <NextIntlClientProvider>
           <ContactModalProvider>
@@ -57,6 +49,8 @@ export default async function LocaleLayout({ children, params }: { children: Rea
             <Footer />
           </ContactModalProvider>
         </NextIntlClientProvider>
+        {/* Cookie-free visits, sources and pages; switch on Web Analytics in the Vercel project */}
+        <Analytics />
       </body>
     </html>
   );

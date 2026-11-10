@@ -4,9 +4,8 @@ import { createContext, useCallback, useContext, useEffect, useRef, useState, ty
 import { useTranslations } from 'next-intl';
 import { Icon } from '@/components/ui/Icon';
 import { buttonClass } from '@/components/ui/Button';
-import { ContactForm } from './ContactForm';
+import { ContactForm, type Mode } from './ContactForm';
 
-type Mode = 'demo' | 'waitlist' | 'partner';
 const Ctx = createContext<{ open: (m?: Mode) => void }>({ open: () => {} });
 
 export const useContactModal = () => useContext(Ctx);
@@ -29,9 +28,6 @@ export function ContactModalProvider({ children }: { children: ReactNode }) {
     if (window.location.hash === '#book-a-demo') ref.current?.showModal();
   }, []);
 
-  const title = mode === 'waitlist' ? t('waitlistTitle') : t('modalTitle');
-  const lead = mode === 'waitlist' ? t('waitlistLead') : t('modalLead');
-
   return (
     <Ctx.Provider value={{ open }}>
       {children}
@@ -44,8 +40,8 @@ export function ContactModalProvider({ children }: { children: ReactNode }) {
         <div className="p-6 sm:p-8">
           <div className="mb-6 flex items-start justify-between gap-6">
             <div>
-              <h2 id="contact-modal-title" className="t-h3">{title}</h2>
-              <p className="mt-2 text-muted">{lead}</p>
+              <h2 id="contact-modal-title" className="t-h3">{t('modalTitle')}</h2>
+              <p className="mt-2 text-muted">{t('modalLead')}</p>
             </div>
             <button
               type="button"

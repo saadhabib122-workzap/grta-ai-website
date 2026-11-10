@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 import { routing } from '@/i18n/routing';
 
-type Page = 'home' | 'how' | 'lab' | 'partners' | 'about' | 'legal';
+type Page = 'home' | 'legal';
 
 /** Per-page title, description, canonical and hreflang alternates. */
 export async function pageMeta(locale: string, page: Page, path: string): Promise<Metadata> {

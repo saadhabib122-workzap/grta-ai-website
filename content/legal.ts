@@ -1,43 +1,35 @@
-/* Legal copy, ported from the previous site and updated for the new site's
-   features (Lab demos, AI processing, cookie-free analytics). Draft: requires
-   legal review before the platform launches. */
+/* Legal copy for the one-page site: contact form, news updates and cookie-free
+   analytics. Draft: requires legal review before launch. */
 
 export type LegalBlock = { h: string; p?: string[]; list?: string[]; after?: string[] };
 
-export const legalUpdated = '20 October 2026';
+export const legalUpdated = '10 November 2026';
 
 export const privacy: LegalBlock[] = [
   {
     h: 'What data we collect',
-    p: ['GRTA collects personal data you give us directly when you use this website, try the Lab, or request a demo. This may include:'],
+    p: ['GRTA collects personal data you give us directly when you contact us, book a demo or sign up for news updates. This may include:'],
     list: [
       'Name, work email address and organisation',
       'Organisation size, your role and the message you send us',
-      'Text you type into the Lab demos, and your two-minute pulse answers',
       'Basic, cookie-free usage statistics such as pages visited',
       'Communications you send us, including support requests',
     ],
-    after: ['We do not collect special categories of personal data under GDPR Article 9. Please do not enter personal data about other people into the Lab: it runs on a fictional company.'],
+    after: ['We do not collect special categories of personal data under GDPR Article 9.'],
   },
   {
     h: 'How we use your data',
     list: [
       'To answer your request and arrange a demo or partnership conversation',
-      'To run the Lab demos you start, and to improve them',
+      'To send you news updates, if you signed up for them. You can unsubscribe at any time',
       'To understand how the website is used, in aggregate',
       'To keep the website secure and prevent abuse',
       'To meet legal obligations',
     ],
   },
   {
-    h: 'AI processing',
-    p: [
-      'Some Lab demos send the text you enter to an AI model provider (Anthropic) to generate a result. The provider processes the request to return an answer and does not use it to train its models. Lab text is stored anonymously, and only if you allow it, to improve the demos.',
-    ],
-  },
-  {
     h: 'Storage and security',
-    p: ['Your data is stored within the European Economic Area. We use appropriate technical and organisational measures to protect it, and we never sell personal data.'],
+    p: ['Your data is stored with providers that meet the requirements of GDPR. We use appropriate technical and organisational measures to protect it, and we never sell personal data.'],
     list: [
       'Access is limited to people who need it',
       'Data is encrypted in transit (TLS) and at rest',
@@ -46,7 +38,7 @@ export const privacy: LegalBlock[] = [
   },
   {
     h: 'Cookies',
-    p: ['This website does not use tracking or advertising cookies. Our usage statistics are cookie-free. We store your light or dark preference in your own browser only.'],
+    p: ['This website does not use tracking or advertising cookies. Our usage statistics are cookie-free.'],
   },
   {
     h: 'Your rights under GDPR',
@@ -84,13 +76,9 @@ export const terms: LegalBlock[] = [
       'Copy, distribute or create derivative works from the Service without written permission',
       'Try to gain unauthorised access to the Service or its systems',
       'Send viruses, malware or other harmful code',
-      'Scrape or harvest data by automated means, or overload the Lab demos',
+      'Scrape or harvest data by automated means, or overload the Service',
       'Impersonate anyone or misrepresent your affiliation',
     ],
-  },
-  {
-    h: 'Lab demos',
-    p: ['The Lab uses a fictional organisation and AI-generated output. Results are illustrations, not advice, and may contain errors. Do not rely on them for decisions.'],
   },
   {
     h: 'Intellectual property',

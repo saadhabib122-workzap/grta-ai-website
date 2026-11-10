@@ -10,9 +10,11 @@
   --c-clay: #D8B79B;
   --c-stone: #5E5E57;
   --c-line: #E4DCCD;
-  --font-display: 'Schibsted Grotesk', ui-sans-serif, system-ui, sans-serif;
+  --c-navy: #1D4E89;
+  --c-slate: #17212B;
+  --c-mist: #F3F6FA;
+  --font-display: 'Inter', ui-sans-serif, system-ui, sans-serif;
   --font-body: 'Inter', ui-sans-serif, system-ui, sans-serif;
-  --font-mono: 'Geist Mono', ui-monospace, monospace;
   --t-display-size: clamp(2.75rem, 1.6rem + 4.6vw, 5.5rem); --t-display-line: 1.0; --t-display-weight: 800; --t-display-tracking: -0.03em;
   --t-h1-size: clamp(2.25rem, 1.5rem + 3vw, 4rem); --t-h1-line: 1.05; --t-h1-weight: 700; --t-h1-tracking: -0.025em;
   --t-h2-size: clamp(1.75rem, 1.3rem + 1.8vw, 2.75rem); --t-h2-line: 1.1; --t-h2-weight: 700; --t-h2-tracking: -0.02em;
@@ -48,50 +50,18 @@
   --layout-gutter: clamp(20px, 4vw, 64px);
   --layout-frame: clamp(12px, 1.4vw, 24px);
 }
-:root, :root[data-theme="light"] {
-  --bg: #F6F1E8;
-  --surface: #FFFDF9;
-  --surface-sunk: #EFE8DB;
-  --text: #15201B;
-  --text-muted: #5E5E57;
-  --brand: #1F3D33;
-  --brand-text: #FFFDF9;
+:root {
+  --bg: #FFFFFF;
+  --surface: #FFFFFF;
+  --surface-sunk: #F3F6FA;
+  --text: #17212B;
+  --text-muted: #556170;
+  --brand: #1D4E89;
+  --brand-text: #FFFFFF;
   --accent: #E8551E;
   --accent-text: #C2410C;
-  --thread: #5E889C;
-  --tag: #55704F;
-  --border: #E4DCCD;
+  --thread: #4F7FA8;
+  --tag: #C2410C;
+  --border: #E2E8EF;
   --focus: #E8551E;
-}
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-  --bg: #101814;
-  --surface: #18231E;
-  --surface-sunk: #0C120F;
-  --text: #EFE9DE;
-  --text-muted: #A9ADA3;
-  --brand: #A8C7A0;
-  --brand-text: #101814;
-  --accent: #F07A45;
-  --accent-text: #F5966A;
-  --thread: #9DBCCB;
-  --tag: #A8C7A0;
-  --border: #2A3832;
-  --focus: #F07A45;
-}
-}
-:root[data-theme="dark"] {
-  --bg: #101814;
-  --surface: #18231E;
-  --surface-sunk: #0C120F;
-  --text: #EFE9DE;
-  --text-muted: #A9ADA3;
-  --brand: #A8C7A0;
-  --brand-text: #101814;
-  --accent: #F07A45;
-  --accent-text: #F5966A;
-  --thread: #9DBCCB;
-  --tag: #A8C7A0;
-  --border: #2A3832;
-  --focus: #F07A45;
 }

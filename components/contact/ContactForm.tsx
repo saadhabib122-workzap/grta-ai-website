@@ -6,11 +6,11 @@ import { Link } from '@/i18n/navigation';
 import { Button } from '@/components/ui/Button';
 import { Icon } from '@/components/ui/Icon';
 
-type Mode = 'demo' | 'waitlist' | 'partner';
+export type Mode = 'demo' | 'contact' | 'cocreate';
 type Status = 'idle' | 'sending' | 'done' | 'error';
 
 const SIZES = ['1-50', '51-200', '201-1000', '1000+'];
-const ROLES = ['hr', 'project', 'partner', 'other'] as const;
+const MODES: Mode[] = ['demo', 'contact', 'cocreate'];
 
 export function ContactForm({ mode = 'demo', source }: { mode?: Mode; source: string }) {
   const t = useTranslations('contact');
@@ -37,7 +37,7 @@ export function ContactForm({ mode = 'demo', source }: { mode?: Mode; source: st
       const res = await fetch('/api/lead', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...data, consent: true, mode, source }),
+        body: JSON.stringify({ ...data, consent: true, source }),
       });
       setStatus(res.ok ? 'done' : 'error');
     } catch {
@@ -94,13 +94,13 @@ export function ContactForm({ mode = 'demo', source }: { mode?: Mode; source: st
       <fieldset className="field">
         <legend className="mb-1.5 text-sm font-medium">{t('role')}</legend>
         <div className="flex flex-wrap gap-2">
-          {ROLES.map((r) => (
+          {MODES.map((r) => (
             <label key={r} className="cursor-pointer">
               <input
                 type="radio"
-                name="role"
+                name="mode"
                 value={r}
-                defaultChecked={mode === 'partner' ? r === 'partner' : r === 'hr'}
+                defaultChecked={r === mode}
                 className="peer sr-only"
               />
               <span className="inline-flex h-9 items-center rounded-full border border-line bg-surface px-3.5 text-sm transition-colors peer-checked:border-brand peer-checked:bg-brand peer-checked:text-on-brand peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-accent">
@@ -111,12 +111,10 @@ export function ContactForm({ mode = 'demo', source }: { mode?: Mode; source: st
         </div>
       </fieldset>
 
-      {mode !== 'waitlist' && (
-        <div className="field">
-          <label htmlFor={`${source}-message`}>{t('message')}</label>
-          <textarea id={`${source}-message`} name="message" rows={3} className="input resize-y" placeholder={t('messagePlaceholder')} />
-        </div>
-      )}
+      <div className="field">
+        <label htmlFor={`${source}-message`}>{t('message')}</label>
+        <textarea id={`${source}-message`} name="message" rows={3} className="input resize-y" placeholder={t('messagePlaceholder')} />
+      </div>
 
       <label className="flex items-start gap-3 text-sm text-muted">
         <input type="checkbox" name="consent" className="mt-0.5 h-4 w-4 accent-[var(--brand)]" {...aria('consent')} />

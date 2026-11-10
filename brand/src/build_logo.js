@@ -83,7 +83,7 @@ function livingMark() {
 </svg>\n`;
 }
 
-/* ── Lockup: mark + "grta.ai" as outlined text ── */
+/* ── Lockup: mark + "GRTA" as outlined text (always capitals) ── */
 const fontFile = require.resolve('@fontsource/schibsted-grotesk/files/schibsted-grotesk-latin-700-normal.woff');
 const font = opentype.parse(fs.readFileSync(fontFile).buffer.slice(0));
 
@@ -96,10 +96,10 @@ function wordPath(text, x, baseline, size) {
 
 function lockup({ block, letters, word, idp }) {
   const size = 56;
-  const w = wordPath('grta.ai', 128, 70, size);
+  const w = wordPath('GRTA', 128, 70, size);
   const total = Math.ceil(128 + w.width + 2);
-  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${total} 100" role="img" aria-label="grta.ai">
-  <title>grta.ai</title>
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${total} 100" role="img" aria-label="GRTA">
+  <title>GRTA</title>
   ${markGroup({ block, letters, idp })}
   <path d="${w.d}" fill="${word}"/>
 </svg>\n`;

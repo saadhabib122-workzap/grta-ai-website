@@ -1,10 +1,10 @@
 import { cn } from '@/lib/cn';
 
 /** Icon from the brand sprite (brand/icons → public/brand/icons.svg). */
-export function Icon({ name, size = 24, accent = true, className, label }: {
+export function Icon({ name, size = 24, accent = false, className, label }: {
   name: string;
   size?: number;
-  /** Show the ember accent stroke. Off = single colour. */
+  /** Two-colour accent stroke. Off by default: the brand uses one-colour icons. */
   accent?: boolean;
   className?: string;
   label?: string;

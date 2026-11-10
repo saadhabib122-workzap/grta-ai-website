@@ -34,11 +34,7 @@ for (const [k, v] of Object.entries(tokens.shadow)) lines.push(`  --shadow-${k}:
 for (const [k, v] of Object.entries(tokens.motion)) lines.push(`  --${k.startsWith('ease') ? '' : 'dur-'}${k}: ${v};`);
 for (const [k, v] of Object.entries(tokens.layout)) lines.push(`  --layout-${k}: ${v};`);
 lines.push('}');
-block(':root, :root[data-theme="light"]', tokens.theme.light, '');
-lines.push('@media (prefers-color-scheme: dark) {');
-block('  :root:not([data-theme="light"])', tokens.theme.dark, '');
-lines.push('}');
-block(':root[data-theme="dark"]', tokens.theme.dark, '');
+block(':root', tokens.theme.light, '');
 
 const cssOut = path.resolve(__dirname, '../tokens.css');
 fs.writeFileSync(cssOut, lines.join('\n') + '\n');
@@ -68,7 +64,7 @@ const pairs = (t) => [
 ].map(([f, b, min]) => ({ f, b, min, fg: resolve(t[f]), bg: resolve(t[b]) }));
 
 let failed = 0;
-for (const mode of ['light', 'dark']) {
+for (const mode of ['light']) {
   console.log(`\n  ${mode}`);
   for (const p of pairs(tokens.theme[mode])) {
     const r = ratio(p.fg, p.bg);

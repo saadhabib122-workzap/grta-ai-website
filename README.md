@@ -1,47 +1,59 @@
-# grta.ai
+# GRTA website
 
-The GRTA website: **People move work forward.**
-Next.js 16 · Tailwind CSS 4 · next-intl · Supabase · Claude API.
+One page that makes people trust GRTA before, during or after a conversation with us.
+Next.js 16 · Tailwind CSS 4 · next-intl · hosted on Vercel.
 
-## Run it
+## Fix a typo or change a line (no developer needed)
+
+All words on the site live in one file: [`messages/en.json`](messages/en.json).
+
+1. Open the file on GitHub and click the pencil icon (Edit).
+2. Change the text between the quotes. Keep the quotes, commas and brackets as they are.
+3. Click **Commit changes**. Vercel puts the change live in about a minute.
+
+If the site does not update, the change broke the file's format: open the commit on GitHub, check the red cross next to it, and undo the last edit.
+
+## Page structure
+
+`/` is the whole site, in this order: What GRTA does (with the before-and-after hero), How it works (ABCD), What you get, Greater together, Customer cases, Who we are, Security and compliance, Getting started with the news sign-up. `/legal` holds the privacy notice and terms.
+
+Every call to action opens the same contact form. Contact requests and news sign-ups both go to the team's Google Sheet; the `mode` column says which is which (`demo`, `contact`, `cocreate`, `news`).
+
+## Placeholders to replace
+
+| What | Where |
+|---|---|
+| Team photos and short profiles | `team.people` in `messages/en.json`, and the initials circle in `app/[locale]/page.tsx` |
+| Platform screenshot | The "Screenshot of the GRTA platform coming soon" frame in `app/[locale]/page.tsx` |
+| Log in link | Left out until the platform is confirmed invite-only; add it to `components/layout/Nav.tsx` |
+
+## Run it locally
 
 ```bash
 npm install
 npm run dev          # http://localhost:3000
 ```
 
-Everything works without any keys: the Lab uses its built-in engine and leads go to the existing Google Sheet. To switch on the rest, copy `.env.example` to `.env.local` and fill in what you have:
+No keys are needed. Optional settings are in `.env.example` (copy to `.env.local`):
 
-| Variable | Enables |
+| Variable | What it does |
 |---|---|
-| `ANTHROPIC_API_KEY` | Claude-powered Lab results (Claude Sonnet 5.5) |
-| `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY` | Storing leads, pulses and opt-in Lab sessions (schema in `supabase/migrations/`) |
-| `LEAD_SHEET_URL` | A different Google Sheet endpoint (defaults to the current one) |
+| `LEAD_SHEET_URL` | The Google Sheet (Apps Script) that receives contact requests and news sign-ups |
+| `NEXT_PUBLIC_SITE_URL` | The public address, used for link previews |
 
-## Pages
-
-| Route | What |
-|---|---|
-| `/` | Home: hero, Pick your door (HR / Project teams), live demo, 9→3→1, how it learns, trust, contact |
-| `/how-it-works` | The journey · The HIIT method · Rolling it out |
-| `/lab` | Five demos as tabs: `#brief`, `#translate`, `#team`, `#hiit`, `#network` |
-| `/partners` | Universities & research, Challenge Exchange |
-| `/about` | AI + BI + CI = DI, story, Trust & GDPR |
-| `/legal` | Privacy notice and terms (draft, needs legal review) |
-
-"Book a demo" is a modal on every page (deep link: `/#book-a-demo`).
+Visitor numbers come from Vercel Web Analytics: switch it on under the project's **Analytics** tab in Vercel.
 
 ## Where things live
 
 | Path | |
 |---|---|
-| `messages/en.json` | **All copy.** Edit words here, not in components. |
-| `brand/` | Brand system: tokens, logo, icons, motifs, guidelines. Rebuild with `npm run brand:build`. |
-| `public/illustrations/` | Drop final art here as `<slot>.webp` (names in `brand/illustration-bible.md`). It replaces the placeholder automatically; rebuild for production. |
-| `lib/lab/` | Lab engines: competencies, Nordlys Group (fictional data), brief, translate, team matching, HIIT |
-| `lib/ai/` | Claude client and prompts |
-| `app/api/` | Lab, lead and pulse endpoints |
-| `content/legal.ts` | Legal text |
+| `messages/en.json` | **All copy.** |
+| `app/[locale]/page.tsx` | The one page and its sections |
+| `components/home/BeforeAfter.tsx` | The "switch on GRTA" hero visual |
+| `components/contact/` | Contact form, modal and news sign-up |
+| `app/api/lead/route.ts` | Sends form submissions to the Google Sheet |
+| `content/legal.ts` | Privacy notice and terms |
+| `brand/` | Logo, colours and icons. Colours live in `brand/tokens.json`; rebuild with `node brand/src/build_tokens.js` |
 
 ## Checks
 
@@ -49,12 +61,11 @@ Everything works without any keys: the Lab uses its built-in engine and leads go
 npm run typecheck
 npm run lint
 npm run build
-node tools/review_screenshot.js http://localhost:3000 /,/lab 1440,390 light,dark   # per-section screenshots → .tmp/review
-node tools/test_lab.js http://localhost:3000                                       # drives every Lab demo
+node tools/review_screenshot.js http://localhost:3000 /,/legal 1440,390 light   # screenshots → .tmp/review
 ```
 
-On Windows Git Bash, prefix the review command with `MSYS_NO_PATHCONV=1` so `/` isn't rewritten into a Windows path.
+On Windows Git Bash, prefix the review command with `MSYS_NO_PATHCONV=1`.
 
 ## Danish
 
-i18n is wired. To launch Danish, translate `messages/da.json` (any missing key falls back to English) and add `'da'` to `locales` in `i18n/routing.ts`.
+Language switching is built in. To launch Danish, translate `messages/da.json` (any missing key falls back to English) and add `'da'` to `locales` in `i18n/routing.ts`.
