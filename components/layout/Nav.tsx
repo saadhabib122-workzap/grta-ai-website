@@ -11,7 +11,7 @@ import { cn } from '@/lib/cn';
 
 /* Section anchors on the one-page site. "/#id" also works from the legal page.
    Log in is left out until the platform is confirmed invite-only. */
-const LINKS = ['does', 'how', 'get', 'cases', 'team'] as const;
+const LINKS = ['does', 'how', 'get', 'cases'] as const;
 
 export function Nav() {
   const t = useTranslations('nav');

@@ -23,8 +23,7 @@
       "does": "What GRTA does",
       "how": "How it works",
       "get": "What you get",
-      "cases": "Cases",
-      "team": "Who we are"
+      "cases": "Cases"
     },
     "theme": "Switch between light and dark"
   },
@@ -92,9 +91,30 @@
       }
     ],
     "smallPrint": "Each step combines artificial intelligence with business intelligence.",
-    "screenshot": "Platform screenshot",
-    "screenshotNote": "Screenshot of the GRTA platform coming soon",
-    "cta": "See it on your own organisation"
+    "screenshot": "The GRTA platform",
+    "cta": "See it on your own organisation",
+    "screens": [
+      {
+        "id": "define-task",
+        "label": "A. Define the task",
+        "alt": "GRTA platform: creating a project by describing it in plain language, with the number of roles detected automatically."
+      },
+      {
+        "id": "competence-base",
+        "label": "B. Build the competence base",
+        "alt": "GRTA platform: the list of people in the competence base, each with a scored profile. Names are blurred."
+      },
+      {
+        "id": "decide",
+        "label": "D. Decide",
+        "alt": "GRTA platform: a project broken into roles with required skills, each role filled with a primary and a backup person. Names are blurred."
+      },
+      {
+        "id": "overview",
+        "label": "Overview",
+        "alt": "GRTA platform dashboard with candidates, active projects and quick actions for search, team assembly and people match."
+      }
+    ]
   },
   "get": {
     "title": "See far more of your organisation.",
@@ -161,33 +181,6 @@
       }
     ],
     "cta": "Get in touch"
-  },
-  "team": {
-    "title": "Built by people who have staffed teams the hard way.",
-    "lead": "GRTA is built by people with decades of enterprise, IT operations and HR experience, who have assembled project teams the hard way and know the need first-hand.",
-    "people": [
-      {
-        "name": "Thomas Pontoppidan Jørner",
-        "role": "CEO, Co-founder",
-        "photo": "/team/thomas-pontoppidan-jorner.webp"
-      },
-      {
-        "name": "Andi Sonntag Debel",
-        "role": "Founder and CCO",
-        "photo": "/team/andi-sonntag-debel.webp"
-      },
-      {
-        "name": "Steen Rasmussen",
-        "role": "CDO, Co-founder",
-        "photo": "/team/steen-rasmussen.webp"
-      },
-      {
-        "name": "Anders Olsen",
-        "role": "CTO, Co-founder",
-        "photo": "/team/anders-olsen.webp"
-      }
-    ],
-    "cta": "Talk to us"
   },
   "security": {
     "title": "Security and compliance are designed in from the start.",

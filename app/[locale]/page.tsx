@@ -8,6 +8,7 @@ import { ContactButton } from '@/components/contact/ContactModal';
 import type { Mode } from '@/components/contact/ContactForm';
 import { NewsSignup } from '@/components/contact/NewsSignup';
 import { BeforeAfter } from '@/components/home/BeforeAfter';
+import { ScreenshotTabs } from '@/components/home/ScreenshotTabs';
 import { cn } from '@/lib/cn';
 import { pageMeta } from '@/lib/meta';
 
@@ -48,7 +49,6 @@ export default async function Home({ params }: Props) {
   const main = t.raw('get.main') as Item[];
   const more = t.raw('get.more') as Item[];
   const cases = t.raw('cases.items') as Array<{ title: string; text: string }>;
-  const people = t.raw('team.people') as Array<{ name: string; role: string; photo: string }>;
   const security = t.raw('security.items') as Array<{ icon: string; text: string }>;
 
   return (
@@ -110,13 +110,7 @@ export default async function Home({ params }: Props) {
           </ol>
           <p className="mt-12 text-sm text-muted">{t('how.smallPrint')}</p>
 
-          {/* shortcut: placeholder until Andi sends platform screenshots; swap in a next/image */}
-          <div role="img" aria-label={t('how.screenshot')} className="mx-auto mt-20 max-w-4xl overflow-hidden rounded-[28px] bg-sunk ring-1 ring-line">
-            <div className="flex gap-1.5 bg-surface px-5 py-3.5">
-              <span className="h-2.5 w-2.5 rounded-full bg-line" /><span className="h-2.5 w-2.5 rounded-full bg-line" /><span className="h-2.5 w-2.5 rounded-full bg-line" />
-            </div>
-            <p className="grid aspect-[16/5] place-items-center p-6 text-center text-muted">{t('how.screenshotNote')}</p>
-          </div>
+          <ScreenshotTabs />
           <Cta label={t('how.cta')} />
         </div>
       </Section>
@@ -177,23 +171,6 @@ export default async function Home({ params }: Props) {
             ))}
           </ul>
           <Cta label={t('cases.cta')} mode="contact" />
-        </div>
-      </Section>
-
-      {/* 6. Who we are */}
-      <Section id="team" tone="sunk" aria-labelledby="team-title">
-        <div className="wrap">
-          <SectionHead title={t('team.title')} lead={t('team.lead')} id="team-title" />
-          <ul className="mt-16 grid grid-cols-2 gap-x-6 gap-y-12 lg:grid-cols-4">
-            {people.map((p) => (
-              <li key={p.name}>
-                <Image src={p.photo} alt={p.name} width={176} height={176} className="aspect-square w-full max-w-44 rounded-[28px] object-cover shadow-soft" />
-                <h3 className="mt-6 text-lg font-bold">{p.name}</h3>
-                <p className="mt-1 text-muted">{p.role}</p>
-              </li>
-            ))}
-          </ul>
-          <Cta label={t('team.cta')} mode="contact" />
         </div>
       </Section>
 

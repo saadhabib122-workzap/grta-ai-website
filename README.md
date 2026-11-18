@@ -15,7 +15,7 @@ If the site does not update, the change broke the file's format: open the commit
 
 ## Page structure
 
-`/` is the whole site, in this order: What GRTA does (with the before-and-after hero), How it works (ABCD), What you get, Greater together, Customer cases, Who we are, Security and compliance, Getting started with the news sign-up. `/legal` holds the privacy notice and terms.
+`/` is the whole site, in this order: What GRTA does (with the before-and-after hero), How it works (ABCD), What you get, Greater together, Customer cases, Security and compliance, Getting started with the news sign-up. `/legal` holds the privacy notice and terms.
 
 Every call to action opens the same contact form. Contact requests and news sign-ups both go to the team's Google Sheet; the `mode` column says which is which (`demo`, `contact`, `cocreate`, `news`).
 
@@ -23,8 +23,7 @@ Every call to action opens the same contact form. Contact requests and news sign
 
 | What | Where |
 |---|---|
-| Short team profiles | `team.people` in `messages/en.json` (photos live in `public/team/`) |
-| Platform screenshot | The "Screenshot of the GRTA platform coming soon" frame in `app/[locale]/page.tsx` |
+| More platform screenshots | Add a `.webp` to `public/screens/` and an entry to `how.screens` in `messages/en.json` |
 | Log in link | Left out until the platform is confirmed invite-only; add it to `components/layout/Nav.tsx` |
 
 ## Run it locally
